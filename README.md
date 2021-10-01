@@ -32,10 +32,11 @@
  #### **AVES - Alfred Hitchcock's inspired film-videogame**
 **Documento de Diseño - Grupo 12**
 
-Alex, 
-Jianuo, 
-Manuel Prada Mínguez y 
-Pedro Pablo Cubells Talavera - pablocub@ucm.es
+**Contribuidores:**
+- Alejandro González Sánchez - Algonz39@ucm.es, 
+- Jianuo - Jwen@ucm.es, 
+- Manuel Prada Mínguez - manuelpr@ucm.es, 
+- Pedro Pablo Cubells Talavera - pablocub@ucm.es.
 
 #### **Resumen**
 **Géneros**: Aventura, Supervivencia.
