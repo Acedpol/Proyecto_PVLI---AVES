@@ -29,10 +29,13 @@
  ___
 
  ##### GDD: Game Design Document / Documento de Diseño del Videojuego
- #### **Platero’s Tale**
+ #### **AVES - Alfred Hitchcock's inspired film-videogame**
 **Documento de Diseño - Grupo 12**
 
-Alex, Jianuo, Manuel Prada Mínguez y Pedro Pablo Cubells Talavera
+Alex, 
+Jianuo, 
+Manuel Prada Mínguez y 
+Pedro Pablo Cubells Talavera - pablocub@ucm.es
 
 #### **Resumen**
 **Géneros**: Aventura, Supervivencia.
