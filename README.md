@@ -34,7 +34,7 @@
 
 **Contribuidores:**
 - Alejandro González Sánchez - Algonz39@ucm.es, 
-- Jianuo - Jwen@ucm.es, 
+- Jianuo Wen - Jwen@ucm.es, 
 - Manuel Prada Mínguez - manuelpr@ucm.es, 
 - Pedro Pablo Cubells Talavera - pablocub@ucm.es.
 
