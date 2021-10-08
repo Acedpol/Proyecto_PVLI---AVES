@@ -91,7 +91,7 @@ La curva de dificultad avanza con cada nivel, las hordas de pájaros van aumenta
 
 **1.2 Hito 03** - 20/11/2020
 
-### **Índice**
+**Índice**
 
 **I. Aspectos generales**
 • Vista general
