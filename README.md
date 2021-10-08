@@ -114,7 +114,7 @@ La curva de dificultad avanza con cada nivel, las hordas de pájaros van aumenta
 
 **V. Referencias**
 
-<!-- 1. **Aspectos generales**
+1. **Aspectos generales**
 
 1.2 **Relato del primer nivel :**
 Al acceder al nivel 1, el jugador aparecerá en la calle del pueblo frente a su casa en una de
@@ -123,7 +123,7 @@ para recargar su autoestima y radio respectivamente.
 Tendrá que recorrer el nivel del pueblo sorteando a los vecinos y recogiendo llaves para abrir puertas
 y encontrar a Platero. Encontrará a Platero en la esquina contraria del nivel.
 
-2. **Menús y modos de juego**
+<!-- 2. **Menús y modos de juego**
 
 2.1 **Configuración**
 Al iniciar el juego desde el menú principal, se mostrará al personaje protagonista en su casa, 
