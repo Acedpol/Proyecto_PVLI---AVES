@@ -235,10 +235,15 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 
 6. **Referencias**
 ● Alfred Hitchcock - Pájaros
+
 ● AC - Assassin 's  Creed: tema de sigilo y agro.
+
 ● Inazuma Eleven: ataques esporádicos.
+
 ● Counter strike: sistema de rehenes.
+
 ● Boxhead:  oleadas de pájaros y dinámica de la IA.
+
 ● Hotline Miami: Cámara, movimiento por la escena y combate a melé.
 
 <!-- **Arquitectura**
