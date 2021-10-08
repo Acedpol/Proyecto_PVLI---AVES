@@ -75,7 +75,7 @@ La dificultad avanza con cada nivel, las hordas de pájaros van aumentando y son
 
 El objetivo principal es rescatar a los pueblerinos.
 
-La puntuación final está basada en niveles completados y pájaros muertos.
+La puntuación final está basada en el número de niveles completados y pájaros eliminados.
 
 **Índice**
 
