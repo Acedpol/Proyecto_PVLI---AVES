@@ -83,14 +83,6 @@ La curva de dificultad avanza con cada nivel, las hordas de pájaros van aumenta
 ● Rescatar a la gente del pueblo. Objetivo principal.
 ● Puntuación final basada en niveles completados y pájaros muertos.
 
-**Versiones del documento**
-
-**1.0 Preproducción** - 20/10/2020
-
-**1.1 Hito 01** - 23/11/2020
-
-**1.2 Hito 03** - 20/11/2020
-
 **Índice**
 
 **I. Aspectos generales**
