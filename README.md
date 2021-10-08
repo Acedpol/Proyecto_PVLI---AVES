@@ -16,7 +16,7 @@
  
  ###### Pivotal Tracker: [visualizar en la web][Pivotal Tracker]
 
- ###### Link Arquitectura: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura]
+ ###### Link Arquitectura: [][Nueva Arquitectura]
  <!-- ___ -->
  <!-- ![Imagen de JRJ con su burrito][logo] -->
  ___
@@ -63,11 +63,6 @@
 
 **Versiones del documento**:
 
-● Aspectos generales • Vista general • Relato del primer nivel
-● Menús y modos de juego • Configuración • Interfaz y controles
-● Jugabilidad • Mecánicas • Dinámicas • Estética
-● Contenidos • Historia • Niveles • Personajes • Objetos y enemigos
-
 <!-- ![Captura del menú][capturamenu] -->
 
 <!-- ![Captura de Juego][capturajuego] -->
@@ -76,12 +71,13 @@
 
 Aves es un juego top down de acción y supervivencia. Combina combate y sigilo, involucrando mecánicas de aggro y distancia a los enemigos.
 
-El protagonista es un líder nato del pueblo, con una personalidad humanista ayudará a las gentes del pueblo a pasar la tormenta.
+El protagonista es el líder nato del pueblo, con una personalidad humanista intentará ayudar a las gentes del pueblo a pasar la tormenta.
 
-La curva de dificultad avanza con cada nivel, las hordas de pájaros van aumentando y cada vez son más letales/agresivas. 
+La dificultad avanza con cada nivel, las hordas de pájaros van aumentando y cada vez son más letales. 
 
-● Rescatar a la gente del pueblo. Objetivo principal.
-● Puntuación final basada en niveles completados y pájaros muertos.
+Rescatar a la gente del pueblo. Objetivo principal.
+
+Puntuación final basada en niveles completados y pájaros muertos.
 
 **Índice**
 
@@ -108,19 +104,16 @@ La curva de dificultad avanza con cada nivel, las hordas de pájaros van aumenta
 
 1. **Aspectos generales**
 
-1.2 **Relato del primer nivel :**
-Al acceder al nivel 1, el jugador aparecerá en la calle del pueblo frente a su casa en una de
-las esquinas del mapa. El jugador empezará con una herradura y una batería al lado de su casa 
-para recargar su autoestima y radio respectivamente.
-Tendrá que recorrer el nivel del pueblo sorteando a los vecinos y recogiendo llaves para abrir puertas
-y encontrar a Platero. Encontrará a Platero en la esquina contraria del nivel.
+1.2 **Relato de un nivel :**
+El jugador llegará al pueblo en coche, desde donde comenzará el nivel tras un rápido preview del mapa para que el jugador tenga una idea del layout. 
+Nada más comenzar el jugador será perseguido por bandadas de cuervos y deberá recorrer las calles para encontrar al habitante que esté en peligro. 
+Una vez rescatado, el jugador tendrá que hacerse camino de vuelta al coche.
 
 <!-- 2. **Menús y modos de juego**
 
 2.1 **Configuración**
 Al iniciar el juego desde el menú principal, se mostrará al personaje protagonista en su casa, 
-este entorno hace de menú de inicio. El jugador podrá desplazarse y atravesar la puerta de la habitación 
-para acceder al nivel 1.
+este entorno hace de menú de inicio. 
 
 2.2 **Interfaz y control**
 
@@ -158,7 +151,7 @@ Interactúa con objetos pulsando la ‘E’.
 
 ● *Aguante de la casa*: 
     Cuando fallas en la recolección de los recursos, la casa perderá aguante por cada recurso que falte. 
-    La salud de la casa se mantendrá entre niveles y no es posible de regenerar.
+    La salud de la casa se mantendrá entre niveles y disminuirá cuando se termina un nivel. Si el jugador recoge materiales a lo largo del nivel, se regenerará una cantidad de       vida proporcional al número de materiales recogidos
 
 **Objetivos**:
     Habrá dos objetivos a cumplir:
@@ -168,11 +161,10 @@ Interactúa con objetos pulsando la ‘E’.
     Se deberá completar este objetivo para avanzar hacia el siguiente nivel.
 
 ● *Flexible*:
-    En cada zona tiene que conseguir suministros para poder mantener segura la casa dónde se refugian los supervivientes. 
-    El no recoger algún recurso hará que la salud de la casa disminuya.
+    En cada zona tiene que conseguir suministros para poder mantener segura la casa dónde se refugian los supervivientes.
 
 **Sigilo**:
-	Por los niveles habrá cabinas telefónicas para poder esconderte y que los enemigos te pierdan de vista.  
+    Por los niveles habrá cabinas telefónicas para poder esconderte y que los enemigos te pierdan de vista.  
     Al entrar en ellas, las aves dejarán de atacar y se empezarán a mover de forma errática.
 
 **Enemigos**:
@@ -197,7 +189,7 @@ Vista cenital (top-down), claro-oscuro, paisaje exterior.
 
 Un juego con salpicaduras de sangre y cristales rotos.
 
-Como se verá la cámara
+Cómo se verá la cámara
 
 <!-- **Música utilizada**
 Menú principal: Stasis by Steve Oxen.
