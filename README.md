@@ -57,9 +57,7 @@
 
 ● Pájaros - enemigos.
 
-● Armas.
-
-● Coleccionables.
+● Materiales .
 
 **Versiones del documento**:
 
@@ -69,21 +67,21 @@
 
 **Descripción**
 
-Aves es un juego top down de acción y supervivencia. Combina combate y sigilo, involucrando mecánicas de aggro y distancia a los enemigos.
+Aves es un juego top down de acción y supervivencia. Combina combate y sigilo e involucra mecánicas de aggro y distancia a los enemigos.
 
-El protagonista es el líder nato del pueblo, con una personalidad humanista intentará ayudar a las gentes del pueblo a pasar la tormenta.
+El protagonista es el líder nato del pueblo, con una personalidad humanista que intenta ayudar a los habitantes del pueblo a pasar la tormenta.
 
-La dificultad avanza con cada nivel, las hordas de pájaros van aumentando y cada vez son más letales. 
+La dificultad avanza con cada nivel, las hordas de pájaros van aumentando y son cada vez son más letales. 
 
-Rescatar a la gente del pueblo. Objetivo principal.
+El objetivo principal es rescatar a los pueblerinos.
 
-Puntuación final basada en niveles completados y pájaros muertos.
+La puntuación final está basada en niveles completados y pájaros muertos.
 
 **Índice**
 
 **I. Aspectos generales**
 • Vista general
-• Relato del primer nivel
+• Relato de un nivel
 
 **II. Menús y modos de juego**
 • Configuración
@@ -138,58 +136,56 @@ este entorno hace de menú de inicio.
 3.1. **Mecánicas**
 
 **Jugador**:
-El jugador tiene un movimiento ortodireccional que se controla con WASD.
-Mueve el cursor por la pantalla para apuntar y atacar golpeando a melé con un bate.
+El jugador tiene un movimiento ortodireccional controlado con WASD.
+Se apunta con el cursor y ataca golpeando a melé con un bate en un área en forma de cono.
 Interactúa con objetos pulsando la ‘E’.
 
 **Sistema de Vida**:
 	Hay dos barras de salud distintas. 
 
 ● *Vida del personaje*: 
-    Cuando entras en contacto con los pájaros te quitan vida por segundo, cuantos más haya, más daño harán. 
-    Esta vida se regenera recogiendo “comida” que se encuentra por el nivel.
+    Cuando el jugador entra en contacto con los pájaros se quita vida por segundo, cuantos más hay, más daño hacen. 
+    Se regenera cuando se termina el nivel o recogiendo la “comida” repartida por el nivel.
 
 ● *Aguante de la casa*: 
-    Cuando fallas en la recolección de los recursos, la casa perderá aguante por cada recurso que falte. 
-    La salud de la casa se mantendrá entre niveles y disminuirá cuando se termina un nivel. Si el jugador recoge materiales a lo largo del nivel, se regenerará una cantidad de       vida proporcional al número de materiales recogidos
+    La salud de la casa se mantiene entre niveles y disminuye cuando se termina un nivel. 
+    Si el jugador recoge materiales a lo largo del nivel, se regenera una cantidad de vida proporcional al número de materiales recogidos.
 
 **Objetivos**:
     Habrá dos objetivos a cumplir:
 
 ● *Principal*: 
-    El objetivo principal de cada es rescatar a las personas que se encuentran en apuros. 
-    Se deberá completar este objetivo para avanzar hacia el siguiente nivel.
+    El objetivo principal es rescatar a las personas que se encuentran en apuros. 
+    Se debe completar este objetivo para avanzar al siguiente nivel.
 
 ● *Flexible*:
-    En cada zona tiene que conseguir suministros para poder mantener segura la casa dónde se refugian los supervivientes.
+    En cada zona se tienen que recoger suministros para poder mantener segura la casa donde se refugian los supervivientes.
 
 **Sigilo**:
-    Por los niveles habrá cabinas telefónicas para poder esconderte y que los enemigos te pierdan de vista.  
-    Al entrar en ellas, las aves dejarán de atacar y se empezarán a mover de forma errática.
+    Por los niveles hay cabinas telefónicas y otras estructuras repartidas por el mapa para poder esconderse.  
+    Al entrar en ellas, las aves dejan de atacar y se empeziezan a mover de forma errática.
 
 **Enemigos**:
-	Los enemigos de este juego son las aves.  Estas irán apareciendo por las esquinas de la pantalla y acercándose al jugador para atacar. 
-Harán daño por contacto dependiendo de cuantas aves haya en el momento.
-Habrá enemigos individuales, representados por un ave, y enemigos bandada, que serán varias aves juntas y tendrán mayor salud y daño.
+	Los enemigos de este juego son las aves.  Estas aparecen por las esquinas de la pantalla y se accercan al jugador para atacarle. 
+Hacen daño por contacto, el daño depende del número de aves atacando al jugador.
+Hay enemigos individuales, representados por un ave además de enemigos bandada, varias aves juntas que cuentan como una sola entidad con mayor salud y daño.
 
 3.2. **Dinámicas**
 
-El juego está dividido en niveles. Llegarás a la ubicación de cada nivel en coche, una vez ahí tendrás que completar el objetivo principal y llevarla de vuelta al coche para completar el nivel. Además, podrás conseguir recursos para el hogar.
+El juego está dividido en niveles. 
+Se llega a la ubicación de cada nivel en coche, una vez ahí se tiene que completar el objetivo principal (rescatar al habitante) y volver al coche para completar el nivel. Además, de conseguir recursos para el hogar.
 
-● Tiene un tiempo límite con un contador que mete prisa y estrés. 
-● La dificultad de los niveles va aumentando cada nivel que completa.
-
-*Tiempo prestado*: En cada nivel habrá un contador. A medida que avanza el contador el juego se hará a su vez más difícil, hasta ser injugable una vez terminado dicho contador. Si se agota el tiempo el jugador muere y tendrá que repetir el nivel.
+● Hay un tiempo límite indicado con un contador que tiene el objetivo de causar el estrés que infunde la película.
+● La dificultad de los niveles aumenta con cada nivel completado y a medida que avanza el contador aumenta también la dificultad. 
+● El juego es injugable (debido a la dificultad) una vez termina el contador.
 
 3.3. **Estética**
 
-Años 60 en un pueblo pesquero.
+● Años 60 en un pueblo pesquero.
 
-Vista cenital (top-down), claro-oscuro, paisaje exterior.
+● Vista cenital (top-down), claro-oscuro, paisaje exterior.
 
-Un juego con salpicaduras de sangre y cristales rotos.
-
-Cómo se verá la cámara
+● Salpicaduras y charcos de sangre y cristales rotos.
 
 <!-- **Música utilizada**
 Menú principal: Stasis by Steve Oxen.
@@ -238,12 +234,12 @@ y ciertos problemas a la hora de trabajar en grupo, no pudo ser.
 como sistema de mensajería. También se ha usado Telegram para fijar reuniones. -->
 
 6. **Referencias**
-- Alfred Hitchcock - Pájaros
-- AC - Assassin 's  Creed: tema de sigilo y agro.
-- Inazuma Eleven: ataques esporádicos.
-- Counter strike: sistema de rehenes.
-- Boxhead:  oleadas de pájaros y dinámica de la IA.
-- Hotline Miami: Cámara, movimiento por la escena y combate a melé.
+● Alfred Hitchcock - Pájaros
+● AC - Assassin 's  Creed: tema de sigilo y agro.
+● Inazuma Eleven: ataques esporádicos.
+● Counter strike: sistema de rehenes.
+● Boxhead:  oleadas de pájaros y dinámica de la IA.
+● Hotline Miami: Cámara, movimiento por la escena y combate a melé.
 
 <!-- **Arquitectura**
 
