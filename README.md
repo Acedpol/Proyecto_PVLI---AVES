@@ -261,8 +261,7 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
 [GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Link a la ubicación en el repositorio"
 [Pivotal Tracker]: https://www.pivotaltracker.com/n/projects/2474691 "Herramienta de gestión del Proyecto"
-[Nueva arquitectura]: https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Arquitectura%20Platero%20y%20Yo#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1B3NTcCrNRc7D7IHi2svY9JxskboJyzo2%26export%3Ddownload "Visualizador web"
-[Arquitectura antigua]: https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=ArquitecturaPlaterosTale.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1fdzaqrhfvPPrEq2kRV5FCk7kSp_H8JpD%26export%3Ddownload "Visualizador web"
+[Nueva arquitectura]:  ./assets/screenshots/Diagrama%20de%20GameObjects.drawio.png "Visualizador web"
 [PNG Arquitectura antigua]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/Arquitectura%20Platero%20y%20Yo.png
 [PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
 [capturamenu]: assets/images/captura.png "Captura de Menu"
