@@ -61,13 +61,6 @@
 
 ● Coleccionables.
 
-**Hitos**:
-
-● Hito 0: 1 de octubre de 2021
-● Hito 1: 16 de noviembre de 2021 ¿?
-● Hito 2: 14 de diciembre de 2021 ¿?
-● Hito 3: 20 de enero de 2021 ¿?
-
 **Versiones del documento**:
 
 ● Aspectos generales • Vista general • Relato del primer nivel
