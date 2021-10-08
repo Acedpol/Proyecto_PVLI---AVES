@@ -57,7 +57,7 @@
 
 ● Pájaros - enemigos.
 
-● Materiales .
+● Materiales.
 
 **Versiones del documento**:
 
