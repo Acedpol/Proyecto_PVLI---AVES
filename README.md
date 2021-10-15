@@ -255,7 +255,7 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 
  ###### Arquitectura Antigua: [Diagrama: Platero y Yo (on-line)][Arquitectura antigua] - [Formato PNG][PNG Arquitectura antigua] -->
 
-[Nueva arquitectura]: https://github.com/Acedpol/Proyecto_PVLI---AVES/blob/4f2857b35e6d6c11e8514fe4716af60ecbcc6e70/assets/screenshots/Diagrama%20de%20GameObjects.drawio.png "Visualizador web"
+[Nueva arquitectura]: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Diagrama%20de%20GameObjects.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FAcedpol%2FProyecto_PVLI---AVES%2Fmaster%2Fassets%2Fdocuments%2FArquitectura%2520-%2520UML%2FDiagrama%2520de%2520GameObjects.drawio "Visualizador web"
 <!-- [logo]: assets/images/adaptacion.png "Platero's Tale"
 [video]: https://youtu.be/q81Hx4C6JRw
 [WEB]: https://acedpol.github.io/Proyecto_PVLI_/index.html "Web del Proyecto"
