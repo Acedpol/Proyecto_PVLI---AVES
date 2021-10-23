@@ -6,7 +6,7 @@
  #### Proyecto desarrollado por: _Grupo 12_
  ___
  #### IMPORTANTE:
- - En la carpeta **_videojuego__** se encuentran los archivos que componen el videojuego.
+ - En la carpeta **_videojuego_** se encuentran los archivos que componen el videojuego.
  - Contiene su propio _readme_ con información relevante para su uso.
  - En la carpeta **_assets_** se encuentran los archivos que componen el videojuego.
  
