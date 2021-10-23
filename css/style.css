@@ -35,8 +35,8 @@ html {
 
 canvas, .game_container {
     display: block;
-    width: 60vw;
-    height: 80vh;
+    width: 60%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     position: static;
@@ -48,6 +48,13 @@ header_area {
 
 game_area {
     grid-area: game;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    background-color:aqua;
 }
 
 footer_area {
