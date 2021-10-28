@@ -6,7 +6,10 @@ export default class Object Phaser.GameObjects.Sprite{
         this.y -= this.height;
     }
 
-    pickUpItem(player, Object){
+    this.physics.add.existing(this);
+    this.physics.add.collider(player, Object)
+
+    function OnCollision(player, Object){
         Object.disableBody(true, true);
     }
 
