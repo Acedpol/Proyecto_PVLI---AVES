@@ -7,8 +7,8 @@ export default class Player extends Character {
         
         super(scene, x, y, type)
         this.hp = 15;
-        this.speed = 5;
         this.damage = 5;
+        this.speed = 5;
         
         // esto para poder movernos con wasd en vez de teclas
         this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
@@ -19,7 +19,6 @@ export default class Player extends Character {
 
 
     preUpdate(t,dt) {
-        super.preUpdate(t,dt);
         if (this.right.isDown) {
           this.body.setVelocityX(this.Speed);
         }
@@ -32,6 +31,12 @@ export default class Player extends Character {
         if (this.down.isDown) {
             this.body.setVelocityY(-this.speed);
         }
+
+        if (this.scene.physics.overlap(this.scene.bird, this)) {
+
+            this.damage(bird.damage);
+        }
     }
 
-  }
+
+}
