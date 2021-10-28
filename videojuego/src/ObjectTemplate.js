@@ -1,17 +1,30 @@
-export default class Object Phaser.GameObjects.Sprite{
-    constructor{scene, x, y}{
+export default class Object extends Phaser.GameObjects.Sprite{
+    /**
+    * Constructor del jugador
+    * @param {Phaser.Scene} scene Escena a la que pertenece el jugador
+    * @param {number} x Coordenada X
+    * @param {number} y Coordenada Y
+    */
+    constructor(scene, x, y) {
         super(scene, x, y, '');
         this.scene.add.existing(this);
-        this.x = x;
+        this.physics.add.existing(this, true);
+        this.physics.add.collider(player, Object);
         this.y -= this.height;
-    }
-
-    this.physics.add.existing(this);
-    this.physics.add.collider(player, Object)
-
-    function OnCollision(player, Object){
-        Object.disableBody(true, true);
-    }
-
+      }
     
+
+    /**
+   * Redefinición del preUpdate de Phaser
+   * @override
+   */
+    preUpdate(){
+        super.preUpdate();
+        if (this.scene.physics.overlap(this.scene.player, this)) {
+            // Delegamos en la escena para decidir qué hacer al 
+            // haber cogido un objeto
+            this.scene.objectPickedUp();
+            this.destroy();
+        }
+    }
 }

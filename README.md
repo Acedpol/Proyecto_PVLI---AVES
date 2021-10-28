@@ -258,6 +258,8 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 [Nueva arquitectura]: https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&layers=1&nav=1&title=Diagrama%20de%20GameObjects.drawio#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FAcedpol%2FProyecto_PVLI---AVES%2Fmaster%2F.documents%2FArquitectura%2520-%2520UML%2FDiagrama%2520de%2520GameObjects.drawio "Visualizador web"
 [Pivotal Tracker]: https://www.pivotaltracker.com/n/projects/2534895 "Herramienta de gestión del Proyecto"
 [WEB]: https://acedpol.github.io/Proyecto_PVLI---AVES/ "Web del Proyecto"
+[Sprites]: https://www.spriters-resource.com/
+[Otros Sprites]: https://www.spriters-resource.com/
 <!-- [logo]: assets/images/adaptacion.png "Platero's Tale"
 [video]: https://youtu.be/q81Hx4C6JRw
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
