@@ -4,8 +4,8 @@
  */
 export default class Character extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, type, hp, speed, damage){
-    //super(scene, x, y, type);
-    this.scece = scene;
+    super(scene, x, y, type);
+    this.scene = scene;
     this.x = x;
     this. y = y;
     this. type = type;
