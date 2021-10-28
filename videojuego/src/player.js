@@ -18,23 +18,28 @@ export default class Player extends Character {
 
 
     preUpdate(t,dt) {
-        if (this.right.isDown) {
-          this.body.setVelocityX(this.Speed);
-        }
-        if (this.left.isDown) {
-          this.body.setVelocityX(-this.speed);
-        }
-        if (this.up.isDown) {
-          this.body.setVelocityY(this.speed);
-        }
-        if (this.down.isDown) {
-            this.body.setVelocityY(-this.speed);
-        }
+      super.preUpdate(t,dt);
+      if (this.cursors.up.isDown) {
+        this.body.setVelocityY(-this.speed);
+      }
+      else if (this.cursors.down.isDown){
+        this.body.setVelocityY(this.speed);
+      }
+      else this.body.setVelocityY(0);
+      if (this.cursors.left.isDown) {
+        this.body.setVelocityX(-this.speed);
+      }
+      else if (this.cursors.right.isDown) {
+        this.body.setVelocityX(this.speed);
+      }
+      else {
+        this.body.setVelocityX(0);
+      }
 
-        if (this.scene.physics.overlap(this.scene.bird, this)) {
+      if (this.scene.physics.overlap(this.scene.bird, this)) {
 
-            this.damage(bird.damage);
-        }
+          this.damage(bird.damage);
+      }
     }
 
 
