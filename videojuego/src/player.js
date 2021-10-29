@@ -4,10 +4,11 @@ export default class Player extends Character {
 
     constructor(scene, x, y){
         
-        super(scene, x, y, 'player')
+        super(scene, x, y, 'protagonist');
+        this.play('runFoward')
         this.hp = 15;
         this.damage = 5;
-        this.speed = 20;
+        this.speed = 200;
         
         // esto para poder movernos con wasd en vez de teclas
         this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
@@ -18,7 +19,7 @@ export default class Player extends Character {
 
 
     preUpdate(t,dt) {
-      // super.preUpdate(t,dt);
+      super.preUpdate(t,dt);
       if (this.up.isDown) {
         this.body.setVelocityY(-this.speed);
       }

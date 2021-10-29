@@ -21,9 +21,17 @@ export default class Level extends Phaser.Scene {
    * Creación de los elementos de la escena principal de juego
    */
   create() {
+    this.add.sprite('protagonist');
     this.stars = 10;
     this.bases = this.add.group();
     this.player = new Player(this, 200, 300);
+
+    this.anims.create({
+      key: 'runFoward',
+      frames: this.anims.generateFrameNumbers('protagonist', { start: 0, end: 4 }),
+      frameRate: 2, // Velocidad de la animación
+      repeat: -1    // Animación en bucle
+    });
 
     new Platform(this, this.player, this.bases, 150, 350);
     new Platform(this, this.player, this.bases, 850, 350);
