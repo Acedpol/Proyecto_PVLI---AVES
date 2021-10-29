@@ -22,6 +22,7 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.add.sprite('protagonist');
+    this.map = this.add.image(300, 250, 'mapa');
     this.stars = 10;
     this.bases = this.add.group();
     this.player = new Player(this, 200, 300);

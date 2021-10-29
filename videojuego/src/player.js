@@ -18,8 +18,9 @@ export default class Player extends Character {
     }
 
 
-    preUpdate(t,dt) {
-      super.preUpdate(t,dt);
+    preUpdate(t,dt) 
+    {
+      // movimiento vertical:
       if (this.up.isDown) {
         this.body.setVelocityY(-this.speed);
         this.play('runup', true)
@@ -31,6 +32,8 @@ export default class Player extends Character {
       else {
         this.body.setVelocityY(0);
       }
+
+      // movimiento horizontal:
       if (this.left.isDown) {
         this.body.setVelocityX(-this.speed);
         this.play('runleft', true)
@@ -48,6 +51,4 @@ export default class Player extends Character {
       //     this.damage(bird.damage);
       // }
     }
-
-
 }

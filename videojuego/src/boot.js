@@ -22,8 +22,15 @@ export default class Boot extends Phaser.Scene {
     this.load.image('wood', 'wood.png');
     // this.load.image('player', 'player.png');
     this.load.spritesheet('protagonist', 'prota.png', { frameWidth: 19, frameHeight: 26 });
-  }
+  
 
+    this.load.setPath('./assets/maps/');
+    this.load.tilemapTiledJSON('nivel1', 'nivel1.json');
+
+    this.load.setPath('assets/images/');
+    this.load.image('mapa', 'map_demo.png');
+  }
+  
   /**
    * Creación de la escena. En este caso, solo cambiamos a la escena que representa el
    * nivel del juego
