@@ -6,10 +6,12 @@ export default class Player extends Character {
         
         super(scene, x, y, 'protagonist');
         this.play('rundown')
-        this.hp = 15;
+        this.max_hp = 15;
+        this.hp = this.max_hp;
         this.damage = 5;
         this.speed = 200;
-        
+        this.wood = 0;
+        this.movement = new Phaser.Math.Vector2();
         // esto para poder movernos con wasd en vez de teclas
         this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -17,35 +19,39 @@ export default class Player extends Character {
         this.down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     }
 
+    
 
     preUpdate(t,dt) 
     {
       // movimiento vertical:
       if (this.up.isDown) {
-        this.body.setVelocityY(-this.speed);
+        this.movement.y = -1;
         this.play('runup', true)
       }
       else if (this.down.isDown){
-        this.body.setVelocityY(this.speed);
+        this.movement.y = 1;
         this.play('rundown', true)
       }
       else {
-        this.body.setVelocityY(0);
+        this.movement.y = 0;
       }
 
       // movimiento horizontal:
       if (this.left.isDown) {
-        this.body.setVelocityX(-this.speed);
+        this.movement.x = -1;
         this.play('runleft', true)
       }
       else if (this.right.isDown) {
-        this.body.setVelocityX(this.speed);
+        this.movement.x = 1;
         this.play('runright', true)
       }
       else {
-        this.body.setVelocityX(0);
+        this.movement.x = 0;
       }
 
+      this.movement.normalize();
+      this.movement.scale(this.speed);
+      this.body.setVelocity(this.movement.x,this.movement.y)
       // if (this.scene.physics.overlap(this.scene.bird, this)) {
 
       //     this.damage(bird.damage);

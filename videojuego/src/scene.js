@@ -1,6 +1,4 @@
 import Player from './player.js';
-import Platform from './platform.js';
-
 /**
  * Escena principal del juego. La escena se compone de una serie de plataformas 
  * sobre las que se sitúan las bases en las podrán aparecer las estrellas. 

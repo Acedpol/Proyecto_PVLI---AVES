@@ -1,6 +1,4 @@
 import Boot from './boot.js';
-import End from './end.js';
-import Platform from './platform.js';
 import Level from './scene.js';
 
 /**
@@ -18,7 +16,7 @@ const config_aves = {
         // autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
     },
     pixelArt: true,
-    scene: [Boot, Level, End],
+    scene: [Boot, Level],
     physics: { 
         default: 'arcade', 
         arcade: { 
