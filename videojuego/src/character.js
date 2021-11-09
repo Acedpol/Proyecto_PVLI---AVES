@@ -5,11 +5,8 @@
 export default class Character extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, type, hp, speed, damage){
     super(scene, x, y, type);
-    this.scene = scene;
-    this.x = x;
-    this. y = y;
-    this. type = type;
-    this.hp = hp;
+    this.max_hp = hp;
+    this.hp = this.max_hp;
     this.speed = speed;
     this.damage = damage;
     this.scene.add.existing(this);
@@ -17,6 +14,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds();
     this.createanims();
   }
+  
   damage(damage)
   {
     this.hp-=damage;

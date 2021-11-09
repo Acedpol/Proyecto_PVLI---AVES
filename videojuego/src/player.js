@@ -4,12 +4,8 @@ export default class Player extends Character {
 
     constructor(scene, x, y){
         
-        super(scene, x, y, 'protagonist');
+        super(scene, x, y, 'protagonist', 15, 200, 5);
         this.play('rundown')
-        this.max_hp = 15;
-        this.hp = this.max_hp;
-        this.damage = 5;
-        this.speed = 200;
         this.wood = 0;
         this.movement = new Phaser.Math.Vector2();
         // esto para poder movernos con wasd en vez de teclas

@@ -1,29 +1,28 @@
-export default class Object extends Phaser.GameObjects.Sprite{
+export default class Item extends Phaser.GameObjects.Sprite{
     /**
     * Constructor del jugador
     * @param {Phaser.Scene} scene Escena a la que pertenece el jugador
     * @param {number} x Coordenada X
     * @param {number} y Coordenada Y
     */
-    constructor(scene, x, y) {
-        super(scene, x, y, '');
+    constructor(scene, x, y, type) {
+        super(scene, x, y, type);
         this.scene.add.existing(this);
         this.physics.add.existing(this, true);
         this.physics.add.collider(player, Object);
         this.y -= this.height;
-      }
+    }
     
-
     /**
-   * Redefinición del preUpdate de Phaser
-   * @override
-   */
+    * Redefinición del preUpdate de Phaser
+    * @override
+    */
     preUpdate(){
         super.preUpdate();
         if (this.scene.physics.overlap(this.scene.player, this)) {
             // Delegamos en la escena para decidir qué hacer al 
             // haber cogido un objeto
-            this.scene.objectPickedUp();
+            this.objectPickUp();
             this.destroy();
         }
     }
