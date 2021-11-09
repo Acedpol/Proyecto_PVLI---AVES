@@ -25,11 +25,12 @@ export default class Level extends Phaser.Scene {
     this.bases = this.add.group();
     this.player = new Player(this, 200, 300).setDepth(3);
     
-    this.createMap();
+    this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 
     // Vista o punto de vista: cámara
     this.cameras.main.startFollow(this.player);
 
+    // agregado de colisiones con el mapa al jugador:
     this.physics.add.collider(this.player, this.groundLayer); // terreno
     this.physics.add.collider(this.player, this.immovableLayer); // objetos/colliders
     this.physics.add.collider(this.player, this.backLayer); // sombras
@@ -40,12 +41,12 @@ export default class Level extends Phaser.Scene {
   {
     // creación del mapa:
     this.map = this.make.tilemap({ 
-      key: 'demo_map', 
+      key: 'demo_map', // nombre dado al mapa.json en el boot.js
       tileWidth: 16, 
       tileHeight: 16 
     });
 
-    // asignación de imagenes (tilemaps/tilesets) a archivo pre-configurado.json:
+    // asignación de imagenes (tileset) a el 'name' de cada tileset en el pre-configurado.json:
     const tileset = this.map.addTilesetImage('TX_Props', 'img_TX_Props');
     const tileset1 = this.map.addTilesetImage('TX_Shadow', 'img_TX_Shadow');
     const tileset2 = this.map.addTilesetImage('TX_Struct', 'img_TX_Struct');
@@ -63,6 +64,7 @@ export default class Level extends Phaser.Scene {
     this.immovableLayer.setCollisionByProperty({muro : true}); // -> con propiedad en TILED
     this.backLayer.setCollisionByProperty({muro : true});
     
+    // tamaño del mundo de juego:
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
   }
