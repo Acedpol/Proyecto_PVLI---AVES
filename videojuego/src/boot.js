@@ -23,9 +23,15 @@ export default class Boot extends Phaser.Scene {
     // this.load.image('player', 'player.png');
     this.load.spritesheet('protagonist', 'prota.png', { frameWidth: 19, frameHeight: 26 });
   
-
-    this.load.setPath('./assets/maps/');
-    this.load.tilemapTiledJSON('nivel1', 'nivel1.json');
+    // this.loadDemoMap();
+    this.load.setPath('./assets/maps/demo/');
+    this.load.tilemapTiledJSON('demo_map', 'nivel_demo.json');
+    this.load.image('img_TX_Props', 'TX Props.png');
+    this.load.image('img_TX_Shadow', 'TX Shadow.png');
+    this.load.image('img_TX_Struct', 'TX Struct.png');
+    this.load.image('img_TX_Tileset_Grass', 'TX Tileset Grass.png');
+    this.load.image('img_TX_Tileset_Stone_Ground', 'TX Tileset Stone Ground.png');
+    this.load.image('img_TX_Tileset_Wall', 'TX Tileset Wall.png');
 
     this.load.setPath('assets/images/');
     this.load.image('mapa', 'map_demo.png');
@@ -37,5 +43,16 @@ export default class Boot extends Phaser.Scene {
    */
   create() {
     this.scene.start('level');
+  }
+
+  loadDemoMap(){
+    this.load.setPath('./assets/maps/demo/');
+    this.load.tilemapTiledJSON('demo_map', 'nivel_demo.json');
+    this.load.image('img_TX_Props', 'TX Props.png');
+    this.load.image('img_TX_Shadow', 'TX Shadow.png');
+    this.load.image('img_TX_Struct', 'TX Struct.png');
+    this.load.image('img_TX_Tileset_Grass', 'TX Tileset Grass.png');
+    this.load.image('img_TX_Tileset_Stone_Ground', 'TX Tileset Stone Ground.png');
+    this.load.image('img_TX_Tileset_Wall', 'TX Tileset Wall.png');
   }
 }
