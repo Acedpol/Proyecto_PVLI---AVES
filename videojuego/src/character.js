@@ -23,28 +23,28 @@ export default class Character extends Phaser.GameObjects.Sprite {
   }
 
   createanims(){
-
-    this.anims.create({
+    let animacion = {
       key: 'rundown',
-      frames: this.anims.generateFrameNumbers('protagonist', { start: 0, end: 3 }),
+      frames: this.anims.generateFrameNumbers('protagonist', { start: 0, end: 4 }),
       frameRate: 2, // Velocidad de la animación
       repeat: -1    // Animación en bucle
-    });
+    }
+    this.anims.create(animacion);
     this.anims.create({
       key: 'runleft',
-      frames: this.anims.generateFrameNumbers('protagonist', { start: 4, end: 7 }),
+      frames: this.anims.generateFrameNumbers('protagonist', { start: 5, end: 9 }),
       frameRate: 2, // Velocidad de la animación
       repeat: -1    // Animación en bucle
     });
     this.anims.create({
       key: 'runright',
-      frames: this.anims.generateFrameNumbers('protagonist', { start: 8, end: 11 }),
+      frames: this.anims.generateFrameNumbers('protagonist', { start: 10, end: 14 }),
       frameRate: 2, // Velocidad de la animación
       repeat: -1    // Animación en bucle
     });
     this.anims.create({
       key: 'runup',
-      frames: this.anims.generateFrameNumbers('protagonist', { start: 12, end: 15 }),
+      frames: this.anims.generateFrameNumbers('protagonist', { start: 15, end: 19 }),
       frameRate: 2, // Velocidad de la animación
       repeat: -1    // Animación en bucle
     });

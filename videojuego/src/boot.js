@@ -21,7 +21,7 @@ export default class Boot extends Phaser.Scene {
     this.load.setPath('assets/sprites/');
     this.load.image('wood', 'wood.png');
     // this.load.image('player', 'player.png');
-    this.load.spritesheet('protagonist', 'prota.png', { frameWidth: 19, frameHeight: 26 });
+    this.load.spritesheet('protagonist', 'notnessprota.png', { frameWidth: 28, frameHeight: 40 });
   
     // this.loadDemoMap();
     this.load.setPath('./assets/maps/demo/');

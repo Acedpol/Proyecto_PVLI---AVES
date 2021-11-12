@@ -19,6 +19,7 @@ export default class Player extends Character {
 
     preUpdate(t,dt) 
     {
+      super.preUpdate(t, dt);
       // movimiento vertical:
       if (this.up.isDown) {
         this.movement.y = -1;
