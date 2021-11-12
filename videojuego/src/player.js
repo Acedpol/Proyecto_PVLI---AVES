@@ -1,4 +1,5 @@
 import Character from './character.js';
+import Bird from './bird.js';
 export default class Player extends Character { 
 
 
@@ -53,5 +54,12 @@ export default class Player extends Character {
 
       //     this.damage(bird.damage);
       // }
+    }
+    update(t,dt)
+    {
+      if (this.scene.physics.overlap(this.scene.Bird, this)) {
+  
+          this.damage(Bird.damage);
+      }
     }
 }
