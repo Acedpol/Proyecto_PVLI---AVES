@@ -24,11 +24,14 @@ export default class Player extends Character {
       // movimiento vertical:
       if (this.up.isDown) {
         this.movement.y = -1;
-        this.play('runup', true)
+        this.play('runup', true);
       }
       else if (this.down.isDown){
         this.movement.y = 1;
         this.play('rundown', true)
+        this.on('animationcomplete-rundown', () => {
+          this.playReverse('rundown', true);
+        });
       }
       else {
         this.movement.y = 0;
