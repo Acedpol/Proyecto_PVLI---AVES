@@ -8,13 +8,13 @@ import Level from './scene.js';
 const config_aves = {
     title: "Aves",
     // type: Phaser.AUTO,
-    width:  720,
-    height: 500,
+    // width:  720,
+    // height: 500,
     parent: "game_area",
-    scale: {
-        // mode: Phaser.Scale.FIT,  
-        // autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
-    },
+    // scale: {
+    //     mode: Phaser.Scale.FIT,  
+    //     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+    // },
     pixelArt: true,
     scene: [Boot, Level],
     physics: { 

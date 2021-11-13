@@ -2,14 +2,21 @@ h1 {
   text-align: center;
 }
 
-canvas, .game_container {
+.game_container {
   display: block;
-  width: 95vw;
-  height: 95vh;
+  width: 60%;
+  height: 98%;
   margin-left: auto;
   margin-right: auto;
   position: static;
   overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}
+
+canvas {
+  width: 100%;
+  height: 97.5%;
 }
 
 body {
@@ -17,4 +24,6 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script language="javascript" type="text/javascript" src="assets/web_utils/head-info.js"></script>
+    </head>
+    
+    <body>
+        <!--header section start -->
+        <header_area>
+            <script language="javascript" type="text/javascript" src="assets/web_utils/cabecera.js"></script>
+        </header_area>
+        <!-- header section end -->    
+        
+        <!--header section start -->
+        <game_area class="game_area">
+            <div class="container">
+                <div class="collabs">
+                    <ol>
+                        <li>Pedro Pablo Cubells Talavera - pablocub@ucm.es</li>
+                        <li>Alejandro González Sánchez - Algonz39@ucm.es</li>
+                        <li>Manuel Prada Mínguez - manuelpr@ucm.es</li>
+                        <li>Jianuo Wen - Jwen@ucm.es</li>
+                    </ol>
+                </div>
+                <div class="desc">
+                    <p>
+                        Aves es un juego top down de acción y supervivencia. <br>
+                        Combina combate y sigilo, involucrando mecánicas de aggro y distancia a los enemigos. <br>                        
+                        El protagonista es un líder nato del pueblo, <br>
+                        con una personalidad humanista ayudará a las gentes del pueblo a pasar la tormenta. <br>
+                        La curva de dificultad avanza con cada nivel, <br>
+                        las hordas de pájaros van aumentando y cada vez son más letales/agresivas. <br>
+                        
+                        - Rescatar a la gente del pueblo. Objetivo principal. <br>
+                        - Puntuación final basada en niveles completados y pájaros muertos.
+                    </p>
+                </div>
+                <div class="image"><img src="./assets/images/cuervo.png"></div>
+            </div>
+        </game_area>
+        <!-- header section end -->
+    
+        <!-- footer section start -->
+        <footer_area>
+            <script language="javascript" type="text/javascript" src="assets/web_utils/footer.js"></script>
+        </footer_area>
+        <!-- footer section end -->
+    
+        <script language="javascript" type="text/javascript" src="assets/web_utils/overlay.js"></script>
+
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                gap: 0px 0px;
+                grid-auto-flow: row;
+
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .desc { grid-area: 4 / 1 / 6 / 6; }
+            .collabs { grid-area: 1 / 3 / 4 / 6; }
+            .image { grid-area: 1 / 1 / 4 / 3; }
+
+
+            .collabs ol li {
+                font-family: info;
+                color: cyan;
+                font-size: 20px;
+                list-style: disc;
+            }
+
+            .collabs, .image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .image img {
+                width: 80%;
+                height: 95%;
+            } 
+
+        </style>
+    </body>
+</html>
