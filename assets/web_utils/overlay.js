@@ -1,6 +1,7 @@
 // Open / Close overlay navigation:
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
+    close_download();
 }
     
 function closeNav() {
@@ -26,6 +27,18 @@ function toggle_download()
     
     closeNav();
 }
+
+function close_download() 
+{
+    var obj = document.getElementById("download-link");
+    var btn = document.getElementById("package-btn");
+    if(obj.style.display == "flex") {
+        obj.style.display = "none";
+        btn.style.backgroundColor = "unset";
+        btn.style.textDecorationLine = "unset";
+    }
+}
+
 function download_project()
 {
     var obj = document.getElementById("download-link");
