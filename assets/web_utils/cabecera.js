@@ -2,22 +2,22 @@ document.write(`
 <style>
 @font-face {
     font-family: title-logo;
-    src: url(/assets/fonts/Bombing.ttf);
+    src: url(./assets/fonts/Bombing.ttf);
 }
 
 @font-face {
     font-family: menu-opt;
-    src: url(/assets/fonts/GrandStylus.ttf);
+    src: url(./assets/fonts/GrandStylus.ttf);
 }
 
 @font-face {
     font-family: overlay-opt;
-    src: url(/assets/fonts/Montserrat-Bold.ttf);
+    src: url(./assets/fonts/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: info;
-    src: url(/assets/fonts/Montserrat-Regular.ttf);
+    src: url(./assets/fonts/Montserrat-Regular.ttf);
 }
 </style>
 
