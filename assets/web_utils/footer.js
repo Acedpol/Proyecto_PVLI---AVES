@@ -12,7 +12,7 @@ document.write(`
                 </div>
             </div>
             <div class="social_icon">
-                <a href="https://github.com/Acedpol/Proyecto_PVLI---AVES"><img src="assets/images/github.ico"></a>
+                <a href="https://github.com/Acedpol/Proyecto_PVLI---AVES"><img src="assets/images/github32x32.ico"></a>
                 <a href="#"><img src="assets/images/discord.ico"></a>
                 <a href="https://www.pivotaltracker.com/n/projects/2534895"><img src="assets/images/pivotal-tracker.ico"></a>
             </div>

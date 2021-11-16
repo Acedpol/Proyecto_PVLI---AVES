@@ -6,6 +6,7 @@
 }
 
 html::-webkit-scrollbar {display: none;} 
+iframe::-webkit-scrollbar {display: none;} 
 
 @font-face {
     font-family: title-logo;
@@ -378,8 +379,6 @@ h1{
     font-family: overlay-opt;
     font-size: 20px;
     color: whitesmoke;
-    text-decoration:aqua;
-    text-shadow: darkblue;
     text-decoration-line: underline;                
 }
 
@@ -552,4 +551,63 @@ p{
     .download-title { font-size: 35px; }
     .download > div > p { font-size: 25px; }
     .download > div > button { font-size: 24px; }
+}
+
+/* FORMULARIO */
+.form {
+    background-color:cadetblue;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+iframe {
+    overflow-y: hidden;
+}
+
+.form-inside {
+    width: 100%;
+    height: 80%;
+    overflow-y: hidden;
+}
+
+.github, .pivotal {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.github h1, .pivotal h1 {
+    color: indigo; 
+    text-decoration-line: underline;
+    font-size: 22px;
+}
+
+.github a, .pivotal a {
+    width: 80%;
+    height: 25%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.github a {
+    background-color: unset;
+}
+
+.pivotal a {
+    background-color: unset;
+}
+
+.github img, .pivotal img {
+    border: unset;
+}
+
+.pivotal img {
+    padding: 20px;
 }
