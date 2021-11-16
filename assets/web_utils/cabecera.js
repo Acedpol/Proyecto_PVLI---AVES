@@ -1,4 +1,26 @@
 document.write(`
+<style>
+@font-face {
+    font-family: title-logo;
+    src: url(/assets/fonts/Bombing.ttf);
+}
+
+@font-face {
+    font-family: menu-opt;
+    src: url(/assets/fonts/GrandStylus.ttf);
+}
+
+@font-face {
+    font-family: overlay-opt;
+    src: url(/assets/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: info;
+    src: url(/assets/fonts/Montserrat-Regular.ttf);
+}
+</style>
+
 <div id="download-link" class="download">
     <div style="height: 10%;"><h1 class="download-title" style="text-align: center;"> ¡Descarga con un click! </h1></div>
     <div style="height: 10%;">

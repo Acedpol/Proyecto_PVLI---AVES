@@ -8,7 +8,7 @@
 html::-webkit-scrollbar {display: none;} 
 iframe::-webkit-scrollbar {display: none;} 
 
-@font-face {
+/* @font-face {
     font-family: title-logo;
     src: url(/assets/fonts/Bombing.ttf);
 }
@@ -26,7 +26,7 @@ iframe::-webkit-scrollbar {display: none;}
 @font-face {
     font-family: info;
     src: url(/assets/fonts/Montserrat-Regular.ttf);
-}
+} */
 
 /* BODY STYLE */
 body {
