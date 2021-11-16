@@ -326,11 +326,17 @@ a, .btn {
     justify-content: space-evenly;
 }
 
+.map_img, .map_text img {
+    width: 64px;
+    height: 64px;
+}
+
 .map_icon {
     padding-left: 10px;
     padding-top: 10px;
     text-align: right;
     font-family: info;
+    color: #fffcf4;
 }
 
 .social_icon {
