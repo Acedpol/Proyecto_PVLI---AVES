@@ -8,25 +8,25 @@
 html::-webkit-scrollbar {display: none;} 
 iframe::-webkit-scrollbar {display: none;} 
 
-/* @font-face {
+@font-face {
     font-family: title-logo;
-    src: url(/assets/fonts/Bombing.ttf);
+    src: url(../fonts/Bombing.ttf);
 }
 
 @font-face {
     font-family: menu-opt;
-    src: url(/assets/fonts/GrandStylus.ttf);
+    src: url(../fonts/GrandStylus.ttf);
 }
 
 @font-face {
     font-family: overlay-opt;
-    src: url(/assets/fonts/Montserrat-Bold.ttf);
+    src: url(../fonts/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: info;
-    src: url(/assets/fonts/Montserrat-Regular.ttf);
-} */
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
 
 /* BODY STYLE */
 body {
