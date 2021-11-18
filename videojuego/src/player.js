@@ -16,6 +16,17 @@ export default class Player extends Character {
         this.down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     }
 
+    addWood(wood)
+    {
+      this.wood+=wood;
+    }
+
+    heal(amount)
+    {
+      this.hp += amount;
+      if(this.hp > this.max_hp) this.hp = this.max_hp;
+    }
+
     
 
     preUpdate(t,dt) 

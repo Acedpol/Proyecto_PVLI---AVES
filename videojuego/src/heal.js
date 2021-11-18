@@ -11,7 +11,6 @@ export default class Heal extends Item {
   }
 
   objectPickUp() {
-    this.scene.player.hp += this.heal;
-    if(this.scene.player.hp > this.scene.player.max_hp) this.scene.player.hp
+    this.scene.player.heal(this.heal)
   }
 }
