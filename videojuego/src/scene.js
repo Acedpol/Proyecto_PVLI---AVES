@@ -25,7 +25,8 @@ export default class Level extends Phaser.Scene {
     this.add.sprite('protagonist');
     // this.map = this.add.image(300, 250, 'mapa');
     this.player = new Player(this, 200, 300).setDepth(3);
-    this.spawner = new Spawner(this, 150, 250);
+    this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    this.bird = new Bird(this, 100, 200).setDepth(4);
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 

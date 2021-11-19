@@ -23,6 +23,7 @@ export default class Boot extends Phaser.Scene {
     // Carga de spritesheets
     this.load.spritesheet('protagonist', 'notnessprota.png', { frameWidth: 28, frameHeight: 40 });
     this.load.spritesheet('protagonistidle', 'notnessprotaidleattack.png', { frameWidth: 42, frameHeight: 54 });
+    this.load.spritesheet('bird', 'pajaros.png', { frameWidth: 30, frameHeight: 30 });
   
     // this.loadDemoMap();  
     this.load.setPath('./assets/maps/demo/');

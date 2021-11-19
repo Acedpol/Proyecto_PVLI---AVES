@@ -5,6 +5,8 @@ export default class Bird extends Character {
         
         super(scene, x, y, 'enemy', 10, 100, 1);
         this.movement = new Phaser.Math.Vector2();
+        this.createanims();
+        this.play('bird')
     }
 
     preupdate(t,dt)
@@ -13,4 +15,16 @@ export default class Bird extends Character {
         this.movement = this.rotation;
         this.body.setVelocity(movement)
     }
+    createanims()
+    {
+        this.anims.create({
+            key:'bird',
+            frames: this.anims.generateFrameNumbers('bird', {start: 0, end: 3}),
+            framerate: 15,
+            repeat: -1
+        });
+        
+        
+    }
 }
+    
