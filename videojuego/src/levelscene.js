@@ -13,6 +13,8 @@ export default class levelscene extends Phaser.Scene {
         this.cameras.main.zoom = 2;
         this.cameras.main.fadeIn(1250);
 
+        new Clock(this);
+
         // Vista o punto de vista: cámara
         // this.cameras.main.startFollow(this.player);
     }
@@ -45,5 +47,17 @@ export default class levelscene extends Phaser.Scene {
         this.immovableLayer.renderDebug(this.add.graphics().setAlpha(0.60));
         this.groundLayer.renderDebug(this.add.graphics().setAlpha(0.60));
         this.backLayer.renderDebug(this.add.graphics().setAlpha(0.60));
+    }
+
+    update(){
+        let timer = this.time.addEvent({
+            delay: 15000, 
+            callback: onEvent,
+            callbackScope: this 
+        })
+    }
+
+    onEvent(){
+        text.setText('Time remaining: ' + timer.duration.toFixed(0), 32, 32);
     }
 }
