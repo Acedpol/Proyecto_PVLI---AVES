@@ -1,4 +1,5 @@
 import Player from './player.js';
+import Spawner from './spawner.js';
 /**
  * Escena principal del juego. La escena se compone de una serie de plataformas 
  * sobre las que se sitúan las bases en las podrán aparecer las estrellas. 
@@ -21,9 +22,9 @@ export default class Level extends Phaser.Scene {
   create() {
     this.add.sprite('protagonist');
     // this.map = this.add.image(300, 250, 'mapa');
-    this.stars = 10;
-    this.bases = this.add.group();
+
     this.player = new Player(this, 200, 300).setDepth(3);
+    this.spawner = new Spawner(this, 150, 250);
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 

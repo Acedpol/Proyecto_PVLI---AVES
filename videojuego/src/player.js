@@ -52,17 +52,14 @@ export default class Player extends Character {
 
       this.movement.normalize();
       this.movement.scale(this.speed);
-      this.body.setVelocity(this.movement.x,this.movement.y)
-      // if (this.scene.physics.overlap(this.scene.bird, this)) {
+      this.body.setVelocity(this.movement.x, this.movement.y)
 
-      //     this.damage(bird.damage);
-      // }
     }
     update(t,dt)
     {
       if (this.scene.physics.overlap(this.scene.Bird, this)) {
   
-          this.damage(Bird.damage);
-      }
+        this.damage(Bird.damage);
+    }
     }
 }
