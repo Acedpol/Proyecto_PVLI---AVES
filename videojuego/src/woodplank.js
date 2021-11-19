@@ -11,7 +11,7 @@ export default class WoodPlank extends Item {
     }
 
     objectPickUp() {
-      this.scene.player.wood++;
+      this.scene.player.addWood(1);
     }
 
   }
