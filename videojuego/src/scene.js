@@ -71,4 +71,8 @@ export default class Level extends Phaser.Scene {
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
   }
+
+  endLevel() {
+    
+  }
 }

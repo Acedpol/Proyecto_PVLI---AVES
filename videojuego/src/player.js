@@ -1,13 +1,16 @@
 import Character from './character.js';
 import Bird from './bird.js';
+import FollowingCitizen from './followingCitizen.js';
 export default class Player extends Character { 
 
 
-    constructor(scene, x, y){
+    constructor(scene, x, y) {
         
         super(scene, x, y, 'protagonist', 15, 200, 5);
         this.play('idown');
         this.wood = 0;
+        this.rescued = false;
+        this.visible = true;
         this.movement = new Phaser.Math.Vector2();
         // esto para poder movernos con wasd en vez de teclas
         this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
@@ -17,21 +20,25 @@ export default class Player extends Character {
         this.createanims();
     }
 
-    addWood(wood)
-    {
+    addWood(wood) {
       this.wood+=wood;
     }
 
-    heal(amount)
-    {
+    heal(amount) {
       this.hp += amount;
       if(this.hp > this.max_hp) this.hp = this.max_hp;
     }
 
-    
+    rescueCitizen() {
+      this.rescued = true;
+      this.following = new FollowingCitizen(this, 200, 300).setDepth(3);
+    }
 
-    preUpdate(t,dt) 
-    {
+    hide() {
+      this.visible = !this.visible
+    }
+
+    preUpdate(t,dt) {
       super.preUpdate(t, dt);
       // movimiento vertical:
       if (this.up.isDown) {
@@ -39,7 +46,7 @@ export default class Player extends Character {
         //animacion del jugador
         this.play('runup', true);
       }
-      else if (this.down.isDown){
+      else if (this.down.isDown) {
         this.movement.y = 1;
         this.play('rundown', true);
       }
@@ -60,16 +67,16 @@ export default class Player extends Character {
         this.movement.x = 0;
       }
 
-      if(this.down.isDown && this.left.isDown){
+      if(this.down.isDown && this.left.isDown) {
         this.play('rundownleft', true);
       }
-      else if(this.down.isDown && this.right.isDown){
+      else if(this.down.isDown && this.right.isDown) {
         this.play('rundownright', true);
       }
-      else if(this.up.isDown && this.left.isDown){
+      else if(this.up.isDown && this.left.isDown) {
         this.play('runupleft', true);
       }
-      else if(this.up.isDown && this.right.isDown){
+      else if(this.up.isDown && this.right.isDown) {
         this.play('runupright', true);
       }
 
@@ -88,18 +95,17 @@ export default class Player extends Character {
       this.movement.normalize();
       this.movement.scale(this.speed);
       this.body.setVelocity(this.movement.x, this.movement.y)
-
+      if(this.rescued) this.following.body.setVelocity(this.movement.x, this.movement.y)
     }
     
-    update(t,dt)
-    {
+    update(t,dt) {
       if (this.scene.physics.overlap(this.scene.Bird, this)) {
   
         this.damage(Bird.damage);
-    }
+      }
     }
 
-    createanims(){
+    createanims() {
       this.anims.create({
         key: 'rundown',
         frames: this.anims.generateFrameNumbers('protagonist', { start: 0, end: 7 }),
