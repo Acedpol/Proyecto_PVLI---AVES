@@ -32,9 +32,9 @@ export default class Level extends Phaser.Scene {
     //this.spawner = new Spawner(this, 150, 250).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
-    // this.bird = new Bird(this, 100, 200).setDepth(4);
-    this.goal = new Goal(this, 200 , 400).setDepth(3);
-    this.citizen = new Citizen(this, 200, 200).setDepth(3);
+    //this.bird = new Bird(this, 100, 200).setDepth(4);
+    //this.goal = new Goal(this, 200 , 400).setDepth(3);
+    //this.citizen = new Citizen(this, 200, 200).setDepth(3);
 
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
