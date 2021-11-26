@@ -29,9 +29,9 @@ export default class Player extends Character {
       if(this.hp > this.max_hp) this.hp = this.max_hp;
     }
 
-    rescueCitizen() {
+    rescueCitizen(x, y) {
       this.rescued = true;
-      this.following = new FollowingCitizen(this, 200, 300).setDepth(3);
+      this.following = new FollowingCitizen(this.scene, x, y).setDepth(3);
     }
 
     hide() {

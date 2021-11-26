@@ -1,6 +1,10 @@
 import Player from './player.js';
 import Bird from './bird.js';
+import Goal from './goal.js';
+import Citizen from './citizen.js';
 import Spawner from './spawner.js';
+import WoodPlank from './woodplank.js';
+import Heal from './heal.js';
 
 /**
  * Escena principal del juego. La escena se compone de una serie de plataformas 
@@ -22,11 +26,16 @@ export default class Level extends Phaser.Scene {
    * Creación de los elementos de la escena principal de juego
    */
   create() {
-    this.add.sprite('protagonist');
+    //this.add.sprite('protagonist');
     // this.map = this.add.image(300, 250, 'mapa');
     this.player = new Player(this, 200, 300).setDepth(3);
     //this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    this.wood = new WoodPlank(this, 140, 160).setDepth(3);
+    this.heal = new Heal(this, 350, 350).setDepth(3);
     this.bird = new Bird(this, 100, 200).setDepth(4);
+    this.goal = new Goal(this, 200 , 400).setDepth(3);
+    this.citizen = new Citizen(this, 200, 200).setDepth(3);
+
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 
@@ -70,9 +79,5 @@ export default class Level extends Phaser.Scene {
     // tamaño del mundo de juego:
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
-  }
-
-  endLevel() {
-    
   }
 }

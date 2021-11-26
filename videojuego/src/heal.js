@@ -1,3 +1,5 @@
+import Item from './item.js';
+
 export default class Heal extends Item {
   /**
    * Constructor de Heal

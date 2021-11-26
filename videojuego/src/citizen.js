@@ -1,3 +1,5 @@
+import Item from './item.js';
+
 export default class Citizen extends Item {
   
   /**
@@ -11,7 +13,7 @@ export default class Citizen extends Item {
   }
 
   objectPickUp() {
-    this.scene.player.rescueCitizen();
+    this.scene.player.rescueCitizen(this.x,this.y);
   }
 
 }

@@ -1,3 +1,5 @@
+import Item from './item.js';
+
 export default class WoodPlank extends Item {
   
     /**
