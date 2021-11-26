@@ -14,7 +14,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds();
   }
   
-  damage(damage)
+  reciveDamage(damage)
   {
     this.hp-=damage;
     if(this.hp<=0)
