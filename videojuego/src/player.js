@@ -6,7 +6,7 @@ export default class Player extends Character {
 
     constructor(scene, x, y) {
         
-        super(scene, x, y, 'protagonist', 15, 200, 5);
+        super(scene, x, y, 'protagonist', 150, 200, 5);
         this.play('idown');
         this.wood = 0;
         this.rescued = false;
@@ -96,15 +96,14 @@ export default class Player extends Character {
       this.movement.scale(this.speed);
       this.body.setVelocity(this.movement.x, this.movement.y)
       if(this.rescued) this.following.body.setVelocity(this.movement.x, this.movement.y)
+
+      if (this.scene.physics.overlap(this.scene.bird, this)) {
+        
+        this.reciveDamage(this.scene.bird.damage);
+      }
+    
     }
     
-    update(t,dt) {
-      if (this.scene.physics.overlap(this.scene.Bird, this)) {
-  
-        this.damage(Bird.damage);
-      }
-    }
-
     createanims() {
       this.anims.create({
         key: 'rundown',
@@ -202,5 +201,9 @@ export default class Player extends Character {
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
+    }
+    getPos()
+    {
+      return new Phaser.Math.Vector2(this.x,this.y);
     }
 }

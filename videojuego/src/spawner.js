@@ -6,20 +6,47 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
       super(scene, x, y, 'base');
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this, true);
-
-    }
-    spawnBird() {
-        this.scene.add.existing(new Bird(this.scene, this.x, this.y).setDepth(3));
     }
 
-    preupdate(t,dt)
+    /*
+    Timer = Phaser.Time.timerEvent
+    duration = 0;
+
+    start(duration = 5000, callback)
     {
-        timer = 0;
-        timer++;
-        if(timer === 10)
+        this.finishedCallback = callback;
+        this.timerEvent = this.scene.timerEvent.addEvent({
+            delay: duration,
+            callback:() => {
+                this.restart()
+                if(callback)
+                {
+                    callback()
+                }
+            }
+        })
+    }
+
+    update(t,dt)
+    {
+        if(!this.timerEvent)
         {
-            this.spawnBird();
-            timer = 0;
+            return;
         }
+        const elapsed = this.timerEvent.getElapsed();
+        if(elapsed === duration)
+        {
+            restart();
+        }
+    }
+
+    restart()
+    {
+        elapsed = 0;
+        this.spawnBird();
+    }
+*/
+    spawnBird() {
+    this.scene.add.existing(new Bird(this.scene, this.x, this.y).setDepth(4));
     }
 }
