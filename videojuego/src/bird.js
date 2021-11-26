@@ -26,6 +26,11 @@ export default class Bird extends Character {
             this.body.setVelocity(this.movement.x, this.movement.y)
         }
         else this.body.setVelocity(0,0)
+
+        // colisiones pajaros vs. jugador: si la hay, este recibe danio
+        if (this.scene.physics.overlap(this.scene.player, this)) {
+            this.scene.player.reciveDamage(1);
+        }
     }
     createanims()
     {

@@ -32,12 +32,13 @@ export default class Level extends Phaser.Scene {
     //this.spawner = new Spawner(this, 150, 250).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
-    this.bird = new Bird(this, 100, 200).setDepth(4);
+    // this.bird = new Bird(this, 100, 200).setDepth(4);
     this.goal = new Goal(this, 200 , 400).setDepth(3);
     this.citizen = new Citizen(this, 200, 200).setDepth(3);
 
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
+    this.createBirds();
 
     // Vista o punto de vista: cámara
     this.cameras.main.startFollow(this.player);
@@ -47,6 +48,18 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.immovableLayer); // objetos/colliders
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
+  }
+
+  createBirds(){
+    this.birds = this.physics.add.group({key: 'birds', frameQuantity: 0});
+    this.birdsCount = 0;
+    
+    for (const objeto of this.map.getObjectLayer('birds').objects) {
+      if (objeto.type === '') {
+        this.birds.add(new Bird(this, objeto.x, objeto.y).setDepth(4), true);
+        this.birdsCount++;
+      }
+    }
   }
 
   createMap() 
