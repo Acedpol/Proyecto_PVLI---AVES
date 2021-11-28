@@ -95,11 +95,6 @@ export default class Player extends Character {
       this.movement.normalize();
       this.movement.scale(this.speed);
       this.body.setVelocity(this.movement.x, this.movement.y)
-      if(this.rescued) this.following.body.setVelocity(this.movement.x, this.movement.y)
-
-      // if (this.scene.physics.overlap(this.scene.bird, this)) {        
-      //   this.reciveDamage(this.scene.bird.damage);
-      // }
     
     }
     

@@ -2,16 +2,14 @@ import Character from './character.js';
 import Player from './player.js';
 export default class Bird extends Character {
 
-    constructor(scene, x, y){
-        
+    constructor(scene, x, y) {
         super(scene, x, y, 'enemy', 10, 100, 1);
         this.movement = new Phaser.Math.Vector2(0,0);
         this.createanims();
         this.play('bird');
     }
 
-    preUpdate(t,dt)
-    {
+    preUpdate(t,dt) {
         super.preUpdate(t,dt)
         this.enemyPos = new Phaser.Math.Vector2(0,0);
         this.enemyPos = this.scene.player.getPos();
@@ -32,16 +30,14 @@ export default class Bird extends Character {
             this.scene.player.reciveDamage(1);
         }
     }
-    createanims()
-    {
+    
+    createanims() {
         this.anims.create({
             key:'bird',
             frames: this.anims.generateFrameNumbers('bird', {start: 0, end: 3}),
             framerate: 15,
             repeat: -1
         });
-        
-        
     }
 }
     

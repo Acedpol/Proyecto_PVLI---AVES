@@ -10,7 +10,6 @@ export default class Goal extends Phaser.GameObjects.Sprite{
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this, true);
       this.scene.physics.add.collider(this.scene.player, Object);
-      this.y -= this.height;
   }
   
   /**
