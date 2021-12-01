@@ -7,7 +7,6 @@ export default class Player extends Character {
     constructor(scene, x, y) {
         
         super(scene, x, y, 'protagonist', 150, 200, 5);
-        this.play('idown');
         this.wood = 0;
         this.rescued = false;
         this.visible = true;
@@ -149,53 +148,54 @@ export default class Player extends Character {
       });
       this.anims.create({
         key: 'idown',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 0, end: 0 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 64, end: 64 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'idr',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 1, end: 1 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 65, end: 65 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'iright',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 2, end: 2 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 66, end: 66 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'iur',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 3, end: 3 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 67, end: 67 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'iup',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 4, end: 4 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 68, end: 68 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'iul',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 5, end: 5 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 69, end: 69 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'ileft',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 6, end: 6 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 70, end: 70 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
       this.anims.create({
         key: 'idl',
-        frames: this.anims.generateFrameNumbers('protagonistidle', { start: 7, end: 7 }),
+        frames: this.anims.generateFrameNumbers('protagonist', { start: 71, end: 71 }),
         frameRate: 1, // Velocidad de la animación
         repeat: -1    // Animación en bucle
       });
     }
+
     getPos()
     {
       return new Phaser.Math.Vector2(this.x,this.y);
