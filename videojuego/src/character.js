@@ -32,11 +32,15 @@ export default class Character extends Phaser.GameObjects.Sprite {
   }
 
   followPlayer() {
+    //Para calcular el vector que se forma desde el personaje hasta el character
     this.playerPos = this.scene.player.getPos();
     this.movement.x = -this.x + this.playerPos.x 
     this.movement.y = -this.y + this.playerPos.y 
     this.distance = this.playerPos.distance(new Phaser.Math.Vector2(this.x,this.y))
     this.movement.normalize();
     this.movement.scale(this.speed);
+    //Para cambiar el sprite cuando el character cambia de dirección
+    if (this.movement.x >= 0) this.flipX = true;
+    else this.flipX = false;
   }
 }

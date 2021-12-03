@@ -62,4 +62,5 @@ export default class Boot extends Phaser.Scene {
     this.load.image('img_TX_Tileset_Stone_Ground', 'TX Tileset Stone Ground.png');
     this.load.image('img_TX_Tileset_Wall', 'TX Tileset Wall.png');
   }
+  
 }

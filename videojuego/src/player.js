@@ -45,7 +45,6 @@ export default class Player extends Character {
     function onEvent() {
       this.bat.destroy();
       this.attackcooldown = true;
-      console.log("batchest");
     }
   }
 
@@ -123,19 +122,19 @@ export default class Player extends Character {
       this.attackcooldown = false;
       if (this.orientation === this.down) {
         dx = 0;
-        dy = 15;
+        dy = this.height / 3;
       }
       if (this.orientation === this.right) {
-        dx = 15;
+        dx = this.width / 2;
         dy = 0;
       }
       if (this.orientation === this.left) {
-        dx = -15;
+        dx = - this.width / 2;
         dy = 0;
       }
       if (this.orientation === this.up) {
         dx = 0;
-        dy = -5;
+        dy = - this.height / 3;
       }
       this.attack(dx, dy);
     }
