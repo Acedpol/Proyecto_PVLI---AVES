@@ -19,6 +19,7 @@ export default class Player extends Character {
     this.space = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.orientation = this.down;
     this.attackcooldown = true;
+    this.bat = this;
 
     this.createanims();
   }
