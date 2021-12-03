@@ -1,5 +1,5 @@
 import Character from './character.js';
-import Player from './player.js';
+//import Player from './player.js';
 export default class Bird extends Character {
 
     constructor(scene, x, y) {
