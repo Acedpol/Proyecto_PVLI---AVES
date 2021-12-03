@@ -9,9 +9,7 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite{
       super(scene, x, y, type);
       this.scene.add.existing(this);
       this.physics.add.existing(this, true);
-      this.physics.add.collider(player, Object);
       this.interact = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-
   }
   
   /**
