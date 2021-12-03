@@ -9,7 +9,7 @@ export default class Goal extends Phaser.GameObjects.Sprite{
       super(scene, x, y, 'goal');
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this, true);
-      this.scene.physics.add.collider(this.scene.player, object);
+      this.scene.physics.add.collider(this.scene.player, Object);
   }
   
   /**
