@@ -1,5 +1,6 @@
 import Character from './character.js';
 import Player from './player.js';
+import Baseballbat from './baseballbat.js';
 export default class Bird extends Character {
 
     constructor(scene, x, y) {
@@ -25,9 +26,13 @@ export default class Bird extends Character {
         }
         else this.body.setVelocity(0,0)
 
-        // colisiones pajaros vs. jugador: si la hay, este recibe danio
+        // colisiones pajaros vs. jugador: si la hay, el jugador recibe danio
         if (this.scene.physics.overlap(this.scene.player, this)) {
             this.scene.player.reciveDamage(1);
+        }
+        // colisiones pajaros vs. jugador: si la hay, el jugador recibe danio
+        if (this.scene.physics.overlap(this.scene.bat, this)) {
+            this.reciveDamage(1);
         }
     }
     

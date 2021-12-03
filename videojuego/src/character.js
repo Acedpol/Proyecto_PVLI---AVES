@@ -3,6 +3,16 @@
  * Clase que representa un personaje en el juego. Tanto el jugador como los enemigos como los vecinos una vez rescatados serán considerados personajes.
  */
 export default class Character extends Phaser.GameObjects.Sprite {
+    /**
+   * Constructor de Heal
+   * @param {Scene} scene Escena en la que aparece el jugador
+   * @param {number} x coordenada x
+   * @param {number} y coordenada y
+   * @param {string} type tipo de gameObject
+   * @param {number} hp vida del character
+   * @param {number} speed velocidad a la que se desplaza el character
+   * @param {number} damage daño que inflinge el character al atacar
+   */
   constructor(scene, x, y, type, hp, speed, damage){
     super(scene, x, y, type);
     this.max_hp = hp;

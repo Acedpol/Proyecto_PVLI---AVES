@@ -1,6 +1,6 @@
 import Character from './character.js';
-import Bird from './bird.js';
 import FollowingCitizen from './followingCitizen.js';
+import Baseballbat from './baseballbat.js';
 export default class Player extends Character { 
 
 
@@ -16,7 +16,32 @@ export default class Player extends Character {
         this.left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.space = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.orientation = this.down;
+
         this.createanims();
+    }
+
+    attack(dx, dy) {
+      this.bat = this.scene.add.existing(new Baseballbat(this.scene, this.x + dx, this.y + dy).setDepth(4));
+      if (this.orientation === this.down) {
+        this.bat.flipY = true;
+      }
+      if (this.orientation === this.right){ 
+        this.bat.angle = 90;
+      }
+      if (this.orientation === this.left){ 
+        this.bat.angle = -90;
+      }
+      if (this.orientation === this.up) this.bat.setDepth(2);
+      // this.bat.destroy();
+      this.timer = this.scene.time.delayedCall(10000, this.destroyBat());  // delay in ms
+
+    }
+
+    destroyBat(){
+      this.bat.destroy();
+      console.log("batchest");
     }
 
     addWood(wood) {
@@ -44,10 +69,12 @@ export default class Player extends Character {
         this.movement.y = -1;
         //animacion del jugador
         this.play('runup', true);
+        this.orientation = this.up;
       }
       else if (this.down.isDown) {
         this.movement.y = 1;
         this.play('rundown', true);
+        this.orientation = this.down;
       }
       else {
         this.movement.y = 0;
@@ -57,10 +84,12 @@ export default class Player extends Character {
       if (this.left.isDown) {
         this.movement.x = -1;
         this.play('runleft', true);
+        this.orientation = this.left;
       }
       else if (this.right.isDown) {
         this.movement.x = 1;
         this.play('runright', true);
+        this.orientation = this.right;
       }
       else {
         this.movement.x = 0;
@@ -89,7 +118,27 @@ export default class Player extends Character {
       else if(Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.right)) this.play('idr', true);
       else if(Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.left)) this.play('idl', true);
 
-
+      if(Phaser.Input.Keyboard.JustDown(this.space)){
+        let dx = 0;
+        let dy = 0;
+        if (this.orientation === this.down) {
+          dx = 0;
+          dy = 15;
+        }
+        if (this.orientation === this.right){ 
+          dx = 15;
+          dy = 0;
+        }
+        if (this.orientation === this.left){ 
+          dx = -15;
+          dy = 0;
+        }
+        if (this.orientation === this.up){ 
+          dx = 0;
+          dy = -5;
+        }
+        this.attack(dx, dy);
+      }
 
       this.movement.normalize();
       this.movement.scale(this.speed);
