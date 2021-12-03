@@ -30,7 +30,7 @@ export default class Level extends Phaser.Scene {
     //this.add.sprite('protagonist');
     // this.map = this.add.image(300, 250, 'mapa');
     this.player = new Player(this, 200, 300).setDepth(3);
-    //this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    this.spawner = new Spawner(this, 150, 250).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
     //this.bird = new Bird(this, 100, 200).setDepth(4);
@@ -39,7 +39,7 @@ export default class Level extends Phaser.Scene {
     this.bat = new Baseballbat(this, 100, 100).setDepth(3);
     
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
-    this.createBirds();
+    //this.createBirds();
     
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150 , 200).setDepth(3);
 
@@ -52,7 +52,7 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
   }
-
+/*
   createBirds(){
     this.birds = this.physics.add.group({key: 'birds', frameQuantity: 0});
     this.birdsCount = 0;
@@ -63,7 +63,7 @@ export default class Level extends Phaser.Scene {
         this.birdsCount++;
       }
     }
-  }
+  }*/
 
   createMap() 
   {
