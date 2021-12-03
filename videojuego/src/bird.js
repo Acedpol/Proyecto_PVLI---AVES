@@ -5,23 +5,15 @@ export default class Bird extends Character {
 
     constructor(scene, x, y) {
         super(scene, x, y, 'enemy', 10, 100, 1);
-        this.movement = new Phaser.Math.Vector2(0,0);
         this.createanims();
         this.play('bird');
     }
 
     preUpdate(t,dt) {
         super.preUpdate(t,dt)
-        this.enemyPos = new Phaser.Math.Vector2(0,0);
-        this.enemyPos = this.scene.player.getPos();
-        this.movement.x = -this.x + this.enemyPos.x 
-        this.movement.y = -this.y + this.enemyPos.y 
-        this.distance = new Phaser.Math.Vector2();
-        this.distance = this.enemyPos.distance(new Phaser.Math.Vector2(this.x,this.y))
+        this.followPlayer()
         if(this.distance < 300)
         {
-            this.movement.normalize();
-            this.movement.scale(this.speed);
             this.body.setVelocity(this.movement.x, this.movement.y)
         }
         else this.body.setVelocity(0,0)
