@@ -19,9 +19,9 @@ export default class Player extends Character {
     this.space = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     this.orientation = this.down;
     this.attackcooldown = true;
-    this.bat = this;
-
+    this.bat = this.up;
     this.createanims();
+    this.play('idown', true);
   }
 
   attack(dx, dy) {
@@ -73,11 +73,11 @@ export default class Player extends Character {
     if (this.up.isDown && this.attackcooldown === true) {
       this.movement.y = -1;
       //animacion del jugador
-      this.play('runup', true);
+      if (this.left.isUp && this.right.isUp) this.play('runup', true);
       this.orientation = this.up;
     } else if (this.down.isDown && this.attackcooldown === true) {
       this.movement.y = 1;
-      this.play('rundown', true);
+      if (this.left.isUp && this.right.isUp) this.play('rundown', true);
       this.orientation = this.down;
     } else {
       this.movement.y = 0;
@@ -86,11 +86,11 @@ export default class Player extends Character {
     // movimiento horizontal:
     if (this.left.isDown && this.attackcooldown === true) {
       this.movement.x = -1;
-      this.play('runleft', true);
+      if(this.up.isUp && this.down.isUp) this.play('runleft', true);
       this.orientation = this.left;
     } else if (this.right.isDown && this.attackcooldown === true) {
       this.movement.x = 1;
-      this.play('runright', true);
+      if(this.up.isUp && this.down.isUp) this.play('runright', true);
       this.orientation = this.right;
     } else {
       this.movement.x = 0;
