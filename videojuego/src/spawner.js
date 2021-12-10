@@ -6,24 +6,9 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
       super(scene, x, y, 'sewer');
       this.scene.add.existing(this);
       this.scene.physics.add.existing(this, true);
+      this.timerbool = false;
     }
-    
-    
-    create(){
-        
-        this.timer = this.scene.time.addEvent({
-            delay: 2000,               
-            callback: onEvent,
-            callbackScope: this,
-            loop: true
-        });
-        
-        function onEvent() {
-            this.spawnBird();
-        }
-    }
-    
-    timerbool = false;
+
     preUpdate(t,dt){
         super.preUpdate(t,dt)
         if(this.timerbool === false){
