@@ -27,7 +27,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
   
   reciveDamage(damage) {
     this.hp-=damage;
-    if(this.hp<=0)
+    if(this.hp === 0)
       this.destroy();
   }
 

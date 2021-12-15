@@ -20,7 +20,6 @@ const config_aves = {
     physics: { 
         default: 'arcade', 
         arcade: { 
-            // gravity: { y: 400 }, 
             debug: true 
         } 
     }

@@ -4,7 +4,6 @@ import Citizen from './citizen.js';
 import Spawner from './spawner.js';
 import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
-import Baseballbat from './baseballbat.js';
 
 /**
  * Escena principal del juego.
@@ -29,7 +28,6 @@ export default class Level extends Phaser.Scene {
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
     this.citizen = new Citizen(this, 200, 200).setDepth(3);
-    this.bat = new Baseballbat(this, 100, 100).setDepth(3);
 
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 

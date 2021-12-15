@@ -3,25 +3,35 @@ import FollowingCitizen from './followingCitizen.js';
 import Baseballbat from './baseballbat.js';
 export default class Player extends Character {
 
-
+  /**
+   * Constructor de Heal
+   * @param {Scene} scene Escena en la que aparece el botiquin
+   * @param {number} x coordenada x
+   * @param {number} y coordenada y
+   */
   constructor(scene, x, y) {
-
     super(scene, x, y, 'protagonist', 150, 200, 5);
     this.wood = 0;
     this.rescued = false;
     this.visible = true;
     this.movement = new Phaser.Math.Vector2();
     // esto para poder movernos con wasd en vez de teclas
+
     this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     this.up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.space = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
     this.orientation = this.down;
     this.attackcooldown = true;
-    this.bat = this.up;
+    this.bat = null;
     this.createanims();
     this.play('idown', true);
+    this.bat = this.scene.add.existing(new Baseballbat(this.scene, this.x, this.y));
+    this.bat.setActive(false);
+    console.log("con");
+
   }
 
   attack(dx, dy) {
@@ -44,6 +54,7 @@ export default class Player extends Character {
     });
 
     function onEvent() {
+      // this.bat.active = false;
       this.bat.destroy();
       this.attackcooldown = true;
     }
@@ -69,54 +80,16 @@ export default class Player extends Character {
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
-    // movimiento vertical:
-    if (this.up.isDown && this.attackcooldown === true) {
-      this.movement.y = -1;
-      //animacion del jugador
-      if (this.left.isUp && this.right.isUp) this.play('runup', true);
-      this.orientation = this.up;
-    } else if (this.down.isDown && this.attackcooldown === true) {
-      this.movement.y = 1;
-      if (this.left.isUp && this.right.isUp) this.play('rundown', true);
-      this.orientation = this.down;
-    } else {
-      this.movement.y = 0;
-    }
+    this.move();
 
-    // movimiento horizontal:
-    if (this.left.isDown && this.attackcooldown === true) {
-      this.movement.x = -1;
-      if(this.up.isUp && this.down.isUp) this.play('runleft', true);
-      this.orientation = this.left;
-    } else if (this.right.isDown && this.attackcooldown === true) {
-      this.movement.x = 1;
-      if(this.up.isUp && this.down.isUp) this.play('runright', true);
-      this.orientation = this.right;
-    } else {
-      this.movement.x = 0;
-    }
+    this.playanim();
 
-    if (this.down.isDown && this.left.isDown && this.attackcooldown === true) {
-      this.play('rundownleft', true);
-    } else if (this.down.isDown && this.right.isDown && this.attackcooldown === true) {
-      this.play('rundownright', true);
-    } else if (this.up.isDown && this.left.isDown && this.attackcooldown === true) {
-      this.play('runupleft', true);
-    } else if (this.up.isDown && this.right.isDown && this.attackcooldown === true) {
-      this.play('runupright', true);
-    }
+    //Ataque, para que el jugador pueda atacar tiene que esperar a que se termine su cooldown
+    this.attackinput();
 
-    //para las animaciones de idle
-    if (Phaser.Input.Keyboard.JustUp(this.up) || (this.orientation === this.up && this.attackcooldown === false)) this.play('iup', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.down)|| (this.orientation === this.down && this.attackcooldown === false)) this.play('idown', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.right)|| (this.orientation === this.right && this.attackcooldown === false)) this.play('iright', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.left)|| (this.orientation === this.left && this.attackcooldown === false)) this.play('ileft', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.up) && Phaser.Input.Keyboard.JustUp(this.right)) this.play('iur', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.up) && Phaser.Input.Keyboard.JustUp(this.left)) this.play('iul', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.right)) this.play('idr', true);
-    else if (Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.left)) this.play('idl', true);
+  }
 
-
+  attackinput() {
     if (Phaser.Input.Keyboard.JustDown(this.space) && this.attackcooldown === true) {
       let dx = 0;
       let dy = 0;
@@ -130,167 +103,117 @@ export default class Player extends Character {
         dy = 0;
       }
       if (this.orientation === this.left) {
-        dx = - this.width / 2;
+        dx = -this.width / 2;
         dy = 0;
       }
       if (this.orientation === this.up) {
         dx = 0;
-        dy = - this.height / 3;
+        dy = -this.height / 3;
       }
       this.attack(dx, dy);
+    }
+  }
+
+  playanim() {
+    // movimiento vertical:
+    if (this.down.isDown && this.left.isDown && this.attackcooldown === true) {
+      this.play('rundownleft', true);
+    } else if (this.down.isDown && this.right.isDown && this.attackcooldown === true) {
+      this.play('rundownright', true);
+    } else if (this.up.isDown && this.left.isDown && this.attackcooldown === true) {
+      this.play('runupleft', true);
+    } else if (this.up.isDown && this.right.isDown && this.attackcooldown === true) {
+      this.play('runupright', true);
+    }
+
+    //lógica para las animaciones de idle
+    if (Phaser.Input.Keyboard.JustUp(this.up) || (this.orientation === this.up && this.attackcooldown === false))
+      this.play('iup', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.down) || (this.orientation === this.down && this.attackcooldown === false))
+      this.play('idown', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.right) || (this.orientation === this.right && this.attackcooldown === false))
+      this.play('iright', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.left) || (this.orientation === this.left && this.attackcooldown === false))
+      this.play('ileft', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.up) && Phaser.Input.Keyboard.JustUp(this.right))
+      this.play('iur', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.up) && Phaser.Input.Keyboard.JustUp(this.left))
+      this.play('iul', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.right))
+      this.play('idr', true);
+    else if (Phaser.Input.Keyboard.JustUp(this.down) && Phaser.Input.Keyboard.JustUp(this.left))
+      this.play('idl', true);
+  }
+
+  move() {
+    if (this.up.isDown && this.attackcooldown === true) {
+      this.movement.y = -1;
+      //animacion del jugador
+      if (this.left.isUp && this.right.isUp)
+        this.play('runup', true);
+      this.orientation = this.up;
+    } else if (this.down.isDown && this.attackcooldown === true) {
+      this.movement.y = 1;
+      if (this.left.isUp && this.right.isUp)
+        this.play('rundown', true);
+      this.orientation = this.down;
+    } else {
+      this.movement.y = 0;
+    }
+
+    // movimiento horizontal:
+    if (this.left.isDown && this.attackcooldown === true) {
+      this.movement.x = -1;
+      if (this.up.isUp && this.down.isUp)
+        this.play('runleft', true);
+      this.orientation = this.left;
+    } else if (this.right.isDown && this.attackcooldown === true) {
+      this.movement.x = 1;
+      if (this.up.isUp && this.down.isUp)
+        this.play('runright', true);
+      this.orientation = this.right;
+    } else {
+      this.movement.x = 0;
     }
 
     this.movement.normalize();
     this.movement.scale(this.speed);
     this.body.setVelocity(this.movement.x, this.movement.y)
-
   }
 
   createanims() {
-    this.anims.create({
-      key: 'rundown',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 0,
-        end: 7
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'runleft',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 8,
-        end: 15
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'runright',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 16,
-        end: 23
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'runup',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 24,
-        end: 31
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'rundownleft',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 32,
-        end: 39
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'rundownright',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 40,
-        end: 47
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'runupleft',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 48,
-        end: 55
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'runupright',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 56,
-        end: 63
-      }),
-      frameRate: 15, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'idown',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 64,
-        end: 64
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'idr',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 65,
-        end: 65
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'iright',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 66,
-        end: 66
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'iur',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 67,
-        end: 67
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'iup',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 68,
-        end: 68
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'iul',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 69,
-        end: 69
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'ileft',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 70,
-        end: 70
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
-    this.anims.create({
-      key: 'idl',
-      frames: this.anims.generateFrameNumbers('protagonist', {
-        start: 71,
-        end: 71
-      }),
-      frameRate: 1, // Velocidad de la animación
-      repeat: -1 // Animación en bucle
-    });
+    let start = 0;
+    let end = 7;
+    let numanims = 8;
+    let animnames = ['rundown', 'runleft', 'runright', 'runup', 'rundownleft', 'rundownright', 'runupleft', 'runupright'];
+    for (let i = 0; i < numanims; i++) {
+      this.anims.create({
+        key: animnames[i],
+        frames: this.anims.generateFrameNumbers('protagonist', {
+          start: start,
+          end: end
+        }),
+        frameRate: 15, // Velocidad de la animación
+        repeat: -1 // Animación en bucle
+      });
+      start = end + 1;
+      end += 8;
+    }
+    let idlenames = ['idown', 'idr', 'iright', 'iur', 'iup', 'iul', 'ileft', 'idl'];
+    end = start;
+    for (let i = 0; i < numanims; i++) {
+      this.anims.create({
+        key: idlenames[i],
+        frames: this.anims.generateFrameNumbers('protagonist', {
+          start: start,
+          end: end
+        }),
+        frameRate: 1, // Velocidad de la animación
+        repeat: -1 // Animación en bucle
+      });
+      start++;
+      end++;
+    }
   }
 
   getPos() {
