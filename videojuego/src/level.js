@@ -4,7 +4,6 @@ import Citizen from './citizen.js';
 import Spawner from './spawner.js';
 import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
-import Baseballbat from './baseballbat.js';
 import Countdown from'./countdown.js';
 /**
  * Escena principal del juego.
