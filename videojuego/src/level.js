@@ -4,7 +4,8 @@ import Citizen from './citizen.js';
 import Spawner from './spawner.js';
 import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
-
+import Baseballbat from './baseballbat.js';
+import Countdown from'./countdown.js';
 /**
  * Escena principal del juego.
  * @extends Phaser.Scene
@@ -79,6 +80,11 @@ export default class Level extends Phaser.Scene {
     // tamaño del mundo de juego:
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
+    //creación del timer principal
+    const timerLabel = this.add.text(this.map.width-200, 100, '180', {fontSize: 48 })
+    .setOrigin(0.5)
+    this.countdown= new Countdown(this,timerLabel, 180000)
+    this.countdown.start(this.handleCountdown.bind(this))
   }
   createanims() {
     this.anims.create({
@@ -90,5 +96,12 @@ export default class Level extends Phaser.Scene {
       framerate: 15,
       repeat: -1
     });
+  }
+  handleCountdown(){
+
+  }
+  update()
+  {
+    this.countdown.update()
   }
 }
