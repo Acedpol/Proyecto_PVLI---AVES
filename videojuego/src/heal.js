@@ -8,12 +8,12 @@ export default class Heal extends Item {
    * @param {number} y coordenada y
    * @param {number} heal cantidad de vida que cura el botiquín
    */
-  constructor(scene, x, y, heal) {
+  constructor(scene, x, y) {
     super(scene, x, y, 'heal');
-    this.heal = heal
+    this.heal = 30;
   }
 
   objectPickUp() {
-    this.scene.player.heal(this.heal)
+    this.scene.player.heal(this.heal);
   }
 }

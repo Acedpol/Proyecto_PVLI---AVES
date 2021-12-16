@@ -64,9 +64,17 @@ export default class Player extends Character {
     this.wood += wood;
   }
 
+  getWood() {
+    return this.wood;
+  }
+
   heal(amount) {
     this.hp += amount;
     if (this.hp > this.max_hp) this.hp = this.max_hp;
+  }
+
+  getHealth() {
+    return this.hp;
   }
 
   rescueCitizen(x, y) {

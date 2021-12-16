@@ -5,6 +5,7 @@ import Spawner from './spawner.js';
 import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
 import Countdown from'./countdown.js';
+import UI from './ui.js'
 /**
  * Escena principal del juego.
  * @extends Phaser.Scene
@@ -24,6 +25,8 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
+    this.countdown = new Countdown(this, 180000);
+    this.ui = this.scene.add("UI", new UI(this.player,this.countdown),true)
     this.spawner = new Spawner(this, 150, 250).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
@@ -79,12 +82,11 @@ export default class Level extends Phaser.Scene {
     // tamaño del mundo de juego:
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
 
+
     //creación del timer principal
-    const timerLabel = this.add.text(this.map.width-200, 100, '180', {fontSize: 48 })
-    .setOrigin(0.5)
-    this.countdown= new Countdown(this,timerLabel, 180000)
     this.countdown.start(this.handleCountdown.bind(this))
   }
+
   createanims() {
     this.anims.create({
       key: 'bird',

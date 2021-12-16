@@ -1,10 +1,9 @@
 
 export default class Countdown{
 
-    constructor(scene,label, duration)
+    constructor(scene, duration)
     {
         this.scene = scene;
-        this.label = label;
         this.duration = duration;
         this.elapsed = 0;
         this.remaining = duration
@@ -46,18 +45,20 @@ export default class Countdown{
         }
         this.elapsed = this.timerEvent.getElapsed();
         this.remaining = this.duration - this.elapsed; 
-        const seconds = this.remaining / 1000;
-        this.label.text = seconds.toFixed();
-
-
     }
     // tiempo transcurrido
     elapsedTime()
     {
         return this.elapsed;
     }
+    //tiempo inicial
     getDuration()
     {
         return this.duration;
+    }
+    // Segundos faltantes
+    getRemainingSeconds()
+    {
+        return (this.remaining/1000).toFixed();
     }
 }
