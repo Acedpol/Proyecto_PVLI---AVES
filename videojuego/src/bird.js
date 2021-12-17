@@ -5,6 +5,7 @@ export default class Bird extends Character {
         super(scene, x, y, 'enemy', 2, 100, 1);
         this.play('bird');
         this.damaged = false;
+        this.damagedplayer = false;
     }
 
     preUpdate(t,dt) {
@@ -17,12 +18,23 @@ export default class Bird extends Character {
         else this.body.setVelocity(0,0)
 
         // colisiones pajaros vs. jugador: si la hay, el jugador recibe danio
-        if (this.scene.physics.overlap(this.scene.player, this)) {
+        if (this.scene.physics.overlap(this.scene.player, this) && this.damagedplayer === false) {
             this.scene.player.reciveDamage(1);
+            this.damagedplayer = true;
+            if(this.damagedplayer === true && this.active === true){
+                this.playertimer = this.scene.time.addEvent({
+                    delay: 250,
+                    callback: onEven,
+                    callbackScope: this
+                });
+                function onEven() {
+                    this.damagedplayer = false;
+                    console.log("timer finished1")
+                }
+            }
         }
         // colisiones bate vs. pájaro: si la hay, el pájaro recibe danio
         if (this.scene.player.bat !== null && this.scene.physics.overlap(this.scene.player.bat, this) && this.damaged === false) {
-            console.log("damage");
             this.reciveDamage(1);
             this.damaged = true;
             if(this.damaged === true && this.active === true){
