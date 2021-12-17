@@ -14,7 +14,6 @@ export default class Player extends Character {
     this.wood = 0;
     this.rescued = false;
     this.visible = true;
-    this.movement = new Phaser.Math.Vector2();
     // esto para poder movernos con wasd en vez de teclas
 
     this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);

@@ -8,7 +8,7 @@ export default class HealthBar {
         this.y = y;
         this.maxValue = maxValue;
         this.value = this.maxValue;
-        this.p = 172 / this.maxValue;
+        this.proportion = 172 / this.maxValue;
         this.draw();
         scene.add.existing(this.bar);
     }
@@ -44,7 +44,7 @@ export default class HealthBar {
             this.bar.fillStyle(0x00ff00);
         }
 
-        var d = Math.floor(this.p * this.value);
+        var d = Math.floor(this.proportion * this.value);
 
         this.bar.fillRect(this.x + 4, this.y + 4, d, 20);
     }
