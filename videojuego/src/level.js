@@ -4,7 +4,7 @@ import Citizen from './citizen.js';
 import Spawner from './spawner.js';
 import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
-import Countdown from'./countdown.js';
+import Countdown from './countdown.js';
 import UI from './ui.js'
 /**
  * Escena principal del juego.
@@ -26,7 +26,7 @@ export default class Level extends Phaser.Scene {
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
     this.countdown = new Countdown(this, 180000);
-    this.ui = this.scene.add("UI", new UI(this.player,this.countdown),true)
+    this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
     this.spawner = new Spawner(this, 150, 250).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
@@ -98,11 +98,10 @@ export default class Level extends Phaser.Scene {
       repeat: -1
     });
   }
-  handleCountdown(){
+  handleCountdown() {
 
   }
-  update()
-  {
+  update() {
     this.countdown.update()
   }
 }
