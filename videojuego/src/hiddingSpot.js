@@ -5,10 +5,10 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite {
      * @param {number} x Coordenada X
      * @param {number} y Coordenada Y
      */
-    constructor(scene, x, y, type) {
-        super(scene, x, y, type);
+    constructor(scene, x, y) {
+        super(scene, x, y, 'hiddingSpot');
         this.scene.add.existing(this);
-        this.physics.add.existing(this, true);
+        this.scene.physics.add.existing(this, true);
         this.interact = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
     }
 
@@ -18,9 +18,10 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite {
      */
     preUpdate() {
         super.preUpdate();
-        if (this.scene.physics.overlap(this.scene.player, this) && this.interact.isDown) {
+        if (this.scene.physics.overlap(this.scene.player, this) && this.interact.isDown && !this.scene.player.rescued) {
             // Delegamos en la escena para decidir qué hacer al 
             // haber cogido un objeto
+            if(this.scene.player.isHidden()) this.scene.player.uncover();
             this.scene.player.hide();
         }
     }

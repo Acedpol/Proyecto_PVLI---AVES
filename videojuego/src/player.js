@@ -1,6 +1,7 @@
 import Character from './character.js';
 import FollowingCitizen from './followingCitizen.js';
 import Baseballbat from './baseballbat.js';
+import HiddingSpot from './hiddingSpot.js';
 export default class Player extends Character {
 
   /**
@@ -13,7 +14,7 @@ export default class Player extends Character {
     super(scene, x, y, 'protagonist', 150, 200, 5);
     this.wood = 0;
     this.rescued = false;
-    this.visible = true;
+    this.hidden = false;
     // esto para poder movernos con wasd en vez de teclas
 
     this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
@@ -81,18 +82,29 @@ export default class Player extends Character {
   }
 
   hide() {
-    this.visible = !this.visible
+    this.body.gameObject.alpha = 0;
+    this.hidden = true;
+  }
+
+  uncover(){
+    this.body.gameObject.alpha = 255;
+    this.hidden = false;
+  }
+
+  isHidden() {
+    return this.hidden;
   }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt);
+    if(!this.hidden){
     this.move();
 
     this.playanim();
 
     //Ataque, para que el jugador pueda atacar tiene que esperar a que se termine su cooldown
     this.attackinput();
-
+    }
   }
 
   attackinput() {

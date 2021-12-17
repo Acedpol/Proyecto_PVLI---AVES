@@ -39,9 +39,4 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
         this.scene.add.existing(new Bird(this.scene, this.x, this.y).setDepth(4));
     }
 
-    spawnRate() {
-        //this.newDelay = this.initialDelay * Phaser.Math.Percent(this.scene.countDown.remainingTime(), -this.scene.countDown.initialDuration(), this.scene.countDown.initialDuration())
-        //this.newDelay = this.initialDelay * (((this.scene.countdown.elapsedTime()/this.scene.countdown.initialDuration())*100)+1);
-    }
-
 }
