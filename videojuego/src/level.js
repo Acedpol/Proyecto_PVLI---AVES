@@ -6,6 +6,7 @@ import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
 import Countdown from './countdown.js';
 import UI from './ui.js'
+import HiddingSpot from './hiddingSpot.js';
 /**
  * Escena principal del juego.
  * @extends Phaser.Scene
@@ -31,6 +32,8 @@ export default class Level extends Phaser.Scene {
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
     this.citizen = new Citizen(this, 200, 200).setDepth(3);
+    this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
+
 
     this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
 

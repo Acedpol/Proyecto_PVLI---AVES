@@ -6,17 +6,33 @@ export default class Bird extends Character {
         this.play('bird');
         this.damaged = false;
         this.damagedplayer = false;
+        this.redirectCooldown = false;
     }
 
     preUpdate(t, dt) {
         super.preUpdate(t, dt);
-        this.followPlayer();
-        if (this.distance < 300) {
-            this.body.setVelocity(this.movement.x, this.movement.y)
-        } else this.body.setVelocity(0, 0)
-
+        if (!this.scene.player.isHidden()) this.followPlayer();
+        else {
+        //    if (this.redirectCooldown === false) {
+        //        this.redirectCooldown = true;
+        //        this.timer = this.scene.time.addEvent({
+        //            delay: 500,
+        //            callback: redirect(),
+        //            callbackScope: this,
+        //           loop: false
+        // });
+    
+        //        function redirect() {
+                    this.movement = new Phaser.Math.Vector2(Phaser.Math.FloatBetween(-1, 1),Phaser.Math.FloatBetween(-1, 1));
+                    this.movement.normalize();
+                    this.movement.scale(this.speed);
+        //            this.redirectCooldown = false
+        //        }
+        //    }    
+        }
+        this.body.setVelocity(this.movement.x, this.movement.y)
         // colisiones pajaros vs. jugador: si la hay, el jugador recibe danio
-        if (this.scene.physics.overlap(this.scene.player, this) && this.damagedplayer === false) {
+        if (this.scene.physics.overlap(this.scene.player, this) && this.damagedplayer === false && !this.scene.player.isHidden()) {
             this.scene.player.reciveDamage(1);
             this.damagedplayer = true;
             if (this.damagedplayer === true && this.active === true) {
