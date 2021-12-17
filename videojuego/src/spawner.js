@@ -17,7 +17,7 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
         this.duration = this.scene.countdown.getDuration();
         // calculo del delay de spawn
 
-        if (this.timerbool === false) {
+        if (this.timerbool === false && !this.scene.player.isHidden()) {
             this.timerbool = true;
             this.timer = this.scene.time.addEvent({
                 delay: this.newDelay,
