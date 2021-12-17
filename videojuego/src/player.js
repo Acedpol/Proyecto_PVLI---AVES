@@ -24,27 +24,23 @@ export default class Player extends Character {
 
     this.orientation = this.down;
     this.attackcooldown = true;
-    this.bat = null;
+    this.bat = this.bat = this.scene.add.existing(new Baseballbat(this.scene, 0, 0).setDepth(4));
+    this.bat.disableBat();
     this.createanims();
     this.play('idown', true);
-    this.bat = this.scene.add.existing(new Baseballbat(this.scene, this.x, this.y));
-    this.bat.setActive(false);
-    console.log("con");
 
   }
 
   attack(dx, dy) {
-    this.bat = this.scene.add.existing(new Baseballbat(this.scene, this.x + dx, this.y + dy).setDepth(4));
+    this.bat.enableBody(true, this.x + dx, this.y + dy, true, true)
     if (this.orientation === this.down) {
       this.bat.flipY = true;
-    }
-    if (this.orientation === this.right) {
+    } else if (this.orientation === this.right) {
       this.bat.angle = 90;
-    }
-    if (this.orientation === this.left) {
+    } else if (this.orientation === this.left) {
       this.bat.angle = -90;
-    }
-    if (this.orientation === this.up) this.bat.setDepth(2);
+    } 
+
     this.timer = this.scene.time.addEvent({
       delay: 250,
       callback: onEvent,
@@ -54,7 +50,8 @@ export default class Player extends Character {
 
     function onEvent() {
       // this.bat.active = false;
-      this.bat.destroy();
+      // this.bat.destroy();
+      this.bat.disableBat();
       this.attackcooldown = true;
     }
   }
