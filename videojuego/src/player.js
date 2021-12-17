@@ -32,7 +32,6 @@ export default class Player extends Character {
   }
 
   attack(dx, dy) {
-    this.bat.enableBody(true, this.x + dx, this.y + dy, true, true)
     if (this.orientation === this.down) {
       this.bat.flipY = true;
     } else if (this.orientation === this.right) {
@@ -40,6 +39,7 @@ export default class Player extends Character {
     } else if (this.orientation === this.left) {
       this.bat.angle = -90;
     } 
+    this.bat.enableBody(true, this.x + dx, this.y + dy, true, true)
 
     this.timer = this.scene.time.addEvent({
       delay: 250,
@@ -51,6 +51,8 @@ export default class Player extends Character {
     function onEvent() {
       // this.bat.active = false;
       // this.bat.destroy();
+      this.bat.flipY = false;
+      this.bat.angle = 0;
       this.bat.disableBat();
       this.attackcooldown = true;
     }

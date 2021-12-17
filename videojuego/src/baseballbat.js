@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-export default class BaseballBat extends Phaser.GameObjects.Sprite {
-=======
 export default class Baseballbat extends Phaser.Physics.Arcade.Sprite {
->>>>>>> Stashed changes
     /**
      * Constructor de Heal
      * @param {Scene} scene Escena en la que aparece el bate
