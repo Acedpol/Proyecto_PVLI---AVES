@@ -9,12 +9,10 @@ export default class Baseballbat extends Phaser.GameObjects.Sprite {
         super(scene, x, y, 'attack');
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
+
     }
     preUpdate(t, dt) {
         super.preUpdate(t, dt);
     }
 
-    disableHitbox() {
-        this.scene.physics.remove.existing(this, true);
-    }
 }

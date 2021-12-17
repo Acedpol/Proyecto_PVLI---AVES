@@ -8,7 +8,7 @@ import Level from './level.js';
 const config_aves = {
     title: "Aves",
     // type: Phaser.AUTO,
-    width:  720,
+    width: 720,
     height: 500,
     parent: "game_area",
     scale: {
@@ -17,11 +17,11 @@ const config_aves = {
     },
     pixelArt: true,
     scene: [Boot, Level],
-    physics: { 
-        default: 'arcade', 
-        arcade: { 
-            debug: true 
-        } 
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: true
+        }
     }
 };
 
@@ -29,10 +29,10 @@ const config_aves = {
 
 export class AvesGame extends Phaser.Game {
     constructor(config_aves) {
-      super(config_aves);
+        super(config_aves);
     }
 }
 
- window.onload = () => {
+window.onload = () => {
     var game = new AvesGame(config_aves);
 };

@@ -1,64 +1,53 @@
+export default class Countdown {
 
-export default class Countdown{
-
-    constructor(scene, duration)
-    {
+    constructor(scene, duration) {
         this.scene = scene;
         this.duration = duration;
         this.elapsed = 0;
         this.remaining = duration
     }
-    start(callback)
-    {
+    start(callback) {
         this.stop();
 
         this.finishedCallback = callback
 
-        this.timerEvent= this.scene.time.addEvent({
+        this.timerEvent = this.scene.time.addEvent({
             delay: this.duration,
-            callback: () =>{
+            callback: () => {
                 this.stop;
 
-                if(callback)
-                {
+                if (callback) {
                     callback();
                 }
             }
-        }); 
+        });
     }
-    
-    stop()
-    {
-    
-        if(this.timerEvent)
-        {
+
+    stop() {
+
+        if (this.timerEvent) {
             this.timerEvent.destroy();
             this.timerEvent = undefined;
         }
     }
-    
-    update()
-    {
-        if(!this.timerEvent||this.duration<=0)
-        {
+
+    update() {
+        if (!this.timerEvent || this.duration <= 0) {
             return
         }
         this.elapsed = this.timerEvent.getElapsed();
-        this.remaining = this.duration - this.elapsed; 
+        this.remaining = this.duration - this.elapsed;
     }
     // tiempo transcurrido
-    elapsedTime()
-    {
+    elapsedTime() {
         return this.elapsed;
     }
     //tiempo inicial
-    getDuration()
-    {
+    getDuration() {
         return this.duration;
     }
     // Segundos faltantes
-    getRemainingSeconds()
-    {
-        return (this.remaining/1000).toFixed();
+    getRemainingSeconds() {
+        return (this.remaining / 1000).toFixed();
     }
 }
