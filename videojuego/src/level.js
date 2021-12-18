@@ -90,6 +90,7 @@ export default class Level extends Phaser.Scene {
     this.countdown.start(this.handleCountdown.bind(this))
   }
 
+  // Crea las animaciones d elos pájaros
   createanims() {
     this.anims.create({
       key: 'bird',
@@ -100,10 +101,19 @@ export default class Level extends Phaser.Scene {
       framerate: 15,
       repeat: -1
     });
+    this.anims.create({
+      key: 'birddeath',
+      frames: this.anims.generateFrameNumbers('bird', {
+        start: 4,
+        end: 7
+      }),
+      framerate: 1,
+      repeat: 0
+    });
   }
   handleCountdown() {
-
   }
+
   update() {
     this.countdown.update()
   }
