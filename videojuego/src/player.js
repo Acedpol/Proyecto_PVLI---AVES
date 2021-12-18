@@ -83,6 +83,7 @@ export default class Player extends Character {
 
   hide() {
     this.body.gameObject.alpha = 0;
+    this.body.setVelocity(0,0)
     this.hidden = true;
   }
 

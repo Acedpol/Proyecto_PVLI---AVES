@@ -20,7 +20,7 @@ export default class Bird extends Character {
                    callback: redirect,
                    callbackScope: this,
                   loop: false
-        });
+                });
     
                function redirect() {
                     this.movement = new Phaser.Math.Vector2(Phaser.Math.FloatBetween(-1, 1),Phaser.Math.FloatBetween(-1, 1));
@@ -44,7 +44,6 @@ export default class Bird extends Character {
 
                 function onEven() {
                     this.damagedplayer = false;
-                    console.log("timer finished1")
                 }
             }
         }
@@ -61,7 +60,6 @@ export default class Bird extends Character {
 
                 function onEvent() {
                     this.damaged = false;
-                    console.log("timer finished")
                 }
             }
         }

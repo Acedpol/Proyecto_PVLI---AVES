@@ -16,7 +16,6 @@ export default class Baseballbat extends Phaser.Physics.Arcade.Sprite {
     }
 
     disableBat(){
-        console.log("bate");    
         this.disableBody(true, true);
     }
 }
