@@ -11,12 +11,11 @@ export default class Player extends Character {
    * @param {number} y coordenada y
    */
   constructor(scene, x, y) {
-    super(scene, x, y, 'protagonist', 150, 200, 5);
+    super(scene, x, y, 'protagonist', 150, 200, 1);
     this.wood = 0;
     this.rescued = false;
     this.hidden = false;
     // esto para poder movernos con wasd en vez de teclas
-
     this.right = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.left = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     this.up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -25,7 +24,7 @@ export default class Player extends Character {
 
     this.orientation = this.down;
     this.attackcooldown = true;
-    this.bat = this.bat = this.scene.add.existing(new Baseballbat(this.scene, 0, 0).setDepth(4));
+    this.bat = this.scene.add.existing(new Baseballbat(this.scene, 0, 0).setDepth(4));
     this.bat.disableBat();
     this.createanims();
     this.play('idown', true);
@@ -48,10 +47,7 @@ export default class Player extends Character {
       callbackScope: this,
       loop: false
     });
-
     function onEvent() {
-      // this.bat.active = false;
-      // this.bat.destroy();
       this.bat.flipY = false;
       this.bat.angle = 0;
       this.bat.disableBat();
@@ -233,6 +229,12 @@ export default class Player extends Character {
       start++;
       end++;
     }
+  }
+
+  reciveDamage(damage) {
+    this.hp -= damage;
+    if (this.hp <= 0)
+      this.destroy();
   }
 
   getPos() {
