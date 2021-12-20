@@ -22,6 +22,7 @@ export default class LevelCompleted extends Phaser.Scene {
     if (this.continue.isDown) {
       this.level++;
       this.scene.start('HouseMenu', this.level);
+      // this.scene.start('Level', this.level);
     }
   }
 }

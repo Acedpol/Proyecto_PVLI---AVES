@@ -81,7 +81,7 @@ export default class Boot extends Phaser.Scene {
 
     this.load.setPath('assets/images/');
     this.load.image('mapa', 'map_demo.png');
-    this.load.image('fondoCasa', 'casa.png');
+    this.load.image('fondoCasa', 'home.png');
 
     // carga de sonidos
     this.load.setPath('./assets/sounds/');
