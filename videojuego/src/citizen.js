@@ -11,10 +11,12 @@ export default class Citizen extends Item {
   constructor(scene, x, y) {
     super(scene, x, y, 'citizen');
     this.setScale(0.5);
+    this.citizenSound = this.scene.sound.add('audio_citizen');
   }
 
   objectPickUp() {
     this.scene.player.rescueCitizen(this.x, this.y);
+    this.citizenSound.play();
   }
 
 }

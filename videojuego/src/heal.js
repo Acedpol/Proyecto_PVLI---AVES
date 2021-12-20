@@ -11,9 +11,11 @@ export default class Heal extends Item {
   constructor(scene, x, y) {
     super(scene, x, y, 'heal');
     this.heal = 30;
+    this.healSound = this.scene.sound.add('audio_heal');
   }
 
   objectPickUp() {
     this.scene.player.heal(this.heal);
+    this.healSound.play();
   }
 }

@@ -7,6 +7,7 @@ import Heal from './heal.js';
 import Countdown from './countdown.js';
 import UI from './ui.js'
 import HiddingSpot from './hiddingSpot.js';
+import Bird from './bird.js';
 /**
  * Escena principal del juego.
  * @extends Phaser.Scene
@@ -30,8 +31,9 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
-    this.countdown = new Countdown(this, 60000);
+    this.countdown = new Countdown(this, 180000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
+<<<<<<< Updated upstream
 
     // inicia el mapa
     switch(this.level) {
@@ -47,6 +49,29 @@ export default class Level extends Phaser.Scene {
     }
     
     this.createObjects(); // creates all objects of the scene
+=======
+    this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    this.wood = new WoodPlank(this, 140, 160).setDepth(3);
+    this.heal = new Heal(this, 350, 350).setDepth(3);
+    this.citizen = new Citizen(this, 200, 200).setDepth(3);
+    this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
+
+    // demo
+    this.createMap(
+      'demo', 'demo_map', 16, 16, 
+      'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
+      'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
+      'ground', 'colliders', 'sombras'
+    );
+
+    // level
+    // this.createMap(
+    //   'level', 'demo_map', 16, 16, 
+    //   'TX_Props', null, null, null, null, null, 
+    //   'img_TX_Props', null, null, null, null, null, 
+    //   'ground', 'colliders', 'sombras'
+    // );
+>>>>>>> Stashed changes
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
@@ -58,7 +83,10 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.immovableLayer); // objetos/colliders
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
+
+    this.birdSound = this.sound.add('audio_citizen');
     this.createanims();
+<<<<<<< Updated upstream
     // this.createsounds();
   }
 
@@ -87,6 +115,9 @@ export default class Level extends Phaser.Scene {
       'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
       'ground', 'colliders', 'sombras'
     );
+=======
+    //this.createsounds();
+>>>>>>> Stashed changes
   }
 
   createMap(
@@ -137,41 +168,6 @@ export default class Level extends Phaser.Scene {
     this.countdown.start(this.handleCountdown.bind(this))
   }
 
-  createObjects(){    
-    // el tag del ObjectLayer('...') es el mismo que TILED
-    for (const objeto of this.map.getObjectLayer('objetos').objects) {
-      if(objeto.properties) {
-        // console.log("tiene properties");
-        // console.log(objeto.properties);
-        for (const { name, value } of objeto.properties) {
-          if (name === 'type')
-            switch(value) {
-              case 'spawner':
-                new Spawner(this, objeto.x, objeto.y).setDepth(2);
-                console.log("spawner");
-                break;
-              case 'woodplank':
-                new WoodPlank(this, objeto.x, objeto.y).setDepth(3);
-                console.log("woodplank");
-                break;
-              case 'hiddingSpot':
-                new HiddingSpot(this, objeto.x, objeto.y).setDepth(3);
-                break;
-              case 'citic':
-                new Citizen(this, objeto.x, objeto.y).setDepth(3);
-                break;
-              case 'heal':
-                new Heal(this, objeto.x, objeto.y).setDepth(3);
-                break;
-              default:
-                break;
-            }           
-        }
-      }
-    }
-  }
-  
-
   // Crea las animaciones d elos pájaros
   createanims() {
     this.anims.create({
@@ -197,7 +193,7 @@ export default class Level extends Phaser.Scene {
   createsounds()
   {
 
-    this.birdSound = this.bird.scene.sound.add('audio_crow');
+    this.birdSound = this.scene.sound.add('audio_crow');
     this.woodSound = this.scene.sound.add("audio_wood");
     
   }

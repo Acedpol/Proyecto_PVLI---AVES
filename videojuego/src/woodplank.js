@@ -11,10 +11,12 @@ export default class WoodPlank extends Item {
   constructor(scene, x, y) {
     super(scene, x, y, 'wood');
     this.setScale(1);
+    this.woodSound = this.scene.sound.add('audio_wood');
   }
 
   objectPickUp() {
     this.scene.player.addWood(1);
+    this.woodSound.play();
   }
 
 }
