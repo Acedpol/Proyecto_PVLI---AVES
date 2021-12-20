@@ -28,38 +28,9 @@ export default class Level extends Phaser.Scene {
     this.player = new Player(this, 200, 300).setDepth(3);
     this.countdown = new Countdown(this, 60000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
-    // this.spawner = new Spawner(this, 150, 250).setDepth(2);
-    // this.spawner2 = new Spawner(this, 200, 300).setDepth(2);
-    // this.wood = new WoodPlank(this, 140, 160).setDepth(3);
-    // this.heal = new Heal(this, 350, 350).setDepth(3);
-    // this.citizen = new Citizen(this, 200, 200).setDepth(3);
-    // this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
 
-    // demo
-    // this.createMap(
-    //   'demo', 'demo_map', 16, 16, 
-    //   'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
-    //   'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
-    //   'ground', 'colliders', 'sombras'
-    // );
-
-    // level 01
-    this.createMap(
-      'level', 'nivelM', 16, 16, 
-      'rpgUrbanKit1', null, null, null, null, null, 
-      'img_tilemap', null, null, null, null, null, 
-      'ground', 'colliders', 'foreground'
-    );
-
-    // level 02
-    // this.createMap(
-    //   'level', 'nivelJ', 16, 16, 
-    //   'rpgUrbanKit1', null, null, null, null, null, 
-    //   'img_tilemap', null, null, null, null, null, 
-    //   'ground', 'colliders', 'foreground'
-    // );
-
-
+    // inicia el mapa
+    this.createNivel1();
     this.createObjects(); // creates all objects of the scene
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
@@ -74,6 +45,33 @@ export default class Level extends Phaser.Scene {
 
     this.createanims();
     this.createsounds();
+  }
+
+  createNivel1() {
+    this.createMap(
+      'level', 'nivelJ', 16, 16, 
+      'rpgUrbanKit1', null, null, null, null, null, 
+      'img_tilemap', null, null, null, null, null, 
+      'ground', 'colliders', 'foreground'
+    );
+  }
+
+  createNivel2() {
+    this.createMap(
+      'level', 'nivelM', 16, 16, 
+      'rpgUrbanKit1', null, null, null, null, null, 
+      'img_tilemap', null, null, null, null, null, 
+      'ground', 'colliders', 'foreground'
+    );
+  }
+
+  createDemo() {
+    this.createMap(
+      'demo', 'demo_map', 16, 16, 
+      'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
+      'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
+      'ground', 'colliders', 'sombras'
+    );
   }
 
   createMap(
