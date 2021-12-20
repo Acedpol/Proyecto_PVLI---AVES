@@ -19,6 +19,7 @@ export default class Level extends Phaser.Scene {
     super({
       key: 'Level'
     });
+    this.lvl = 0;
   }
 
   init(datos) {
