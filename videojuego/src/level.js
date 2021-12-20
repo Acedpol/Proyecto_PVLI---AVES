@@ -43,13 +43,21 @@ export default class Level extends Phaser.Scene {
       'ground', 'colliders', 'sombras'
     );
 
-    // level
+    // level 01
     // this.createMap(
-    //   'level', 'demo_map', 16, 16, 
-    //   'TX_Props', null, null, null, null, null, 
-    //   'img_TX_Props', null, null, null, null, null, 
-    //   'ground', 'colliders', 'sombras'
+    //   'level', 'nivelM', 16, 16, 
+    //   'rpgUrbanKit1', 'urbankit-cambios', null, null, null, null, 
+    //   'img_tilemap', 'img_tilemap-copia', null, null, null, null, 
+    //   'ground', 'colliders', 'foreground'
     // );
+
+    // level 02
+    this.createMap(
+      'level', 'nivelJ', 16, 16, 
+      'rpgUrbanKit1', null, null, null, null, null, 
+      'img_tilemap', null, null, null, null, null, 
+      'ground', 'colliders', 'foreground'
+    );
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
