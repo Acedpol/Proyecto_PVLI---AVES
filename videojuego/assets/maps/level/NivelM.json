@@ -330,6 +330,42 @@
                  "width":0,
                  "x":251.333,
                  "y":252
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coche"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":42,
+                 "y":531
+                }, 
+                {
+                 "height":0,
+                 "id":27,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"player"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":81,
+                 "y":565
                 }],
          "opacity":1,
          "properties":[
@@ -344,7 +380,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":26,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -2635,8 +2671,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2644,8 +2680,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2653,8 +2689,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2662,8 +2698,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2671,8 +2707,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2680,8 +2716,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2689,8 +2725,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2698,8 +2734,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2779,8 +2815,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2788,8 +2824,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2797,8 +2833,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2806,8 +2842,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2815,8 +2851,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2824,8 +2860,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2833,8 +2869,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2842,8 +2878,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }],
          "tilewidth":16
