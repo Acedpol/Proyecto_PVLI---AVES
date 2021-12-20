@@ -235,7 +235,6 @@ export default class Player extends Character {
   reciveDamage(damage) {
     this.hp -= damage;
     if (this.hp <= 0) {
-      this.scene.scene.add("GameOver",new GameOver);
       this.scene.scene.remove("UI");
       this.scene.scene.stop("Level");
       this.scene.scene.start("GameOver");

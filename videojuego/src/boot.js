@@ -67,6 +67,7 @@ export default class Boot extends Phaser.Scene {
 
     this.load.setPath('assets/images/');
     this.load.image('mapa', 'map_demo.png');
+    this.load.image('fondoCasa', 'casa.png');
   }
 
   /**
@@ -74,7 +75,7 @@ export default class Boot extends Phaser.Scene {
    * nivel del juego
    */
   create() {
-    this.scene.start('Level');
+    this.scene.start('HouseMenu');
   }
 
   loadDemoMap() {

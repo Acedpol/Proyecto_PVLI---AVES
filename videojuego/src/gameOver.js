@@ -19,7 +19,7 @@ export default class GameOver extends Phaser.Scene {
 
     update() {
       if (this.restart.isDown) {
-         this.scene.start('Level');
+         this.scene.start('HouseMenu');
       }
     }
     
