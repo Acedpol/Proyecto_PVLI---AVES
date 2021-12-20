@@ -9,7 +9,7 @@ export default class Baseballbat extends Phaser.Physics.Arcade.Sprite {
         super(scene, x, y, 'attack');
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
-
+        this.setScale(0.75);
     }
     preUpdate(t, dt) {
         super.preUpdate(t, dt);
