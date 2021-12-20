@@ -3,7 +3,7 @@ import Deadbird from './deadbird.js';
 export default class Bird extends Character {
 
     constructor(scene, x, y) {
-        super(scene, x, y, 'enemy', 2, 100, 1);
+        super(scene, x, y, 'enemy', 2, 75, 1);
         this.play('bird');
         this.damaged = false;
         this.damagedplayer = false;

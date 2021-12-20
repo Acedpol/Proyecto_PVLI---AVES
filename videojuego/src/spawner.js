@@ -7,8 +7,8 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this, true);
         this.timerbool = false;
-        this.initialDelay = 1000;
-        this.newDelay = this.initialDelay;
+        this.delay = 1000 + (Math.random() * 4000);
+        this.spawnRate = 5000;
     }
 
     preUpdate(t, dt) {
@@ -20,7 +20,7 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
         if (this.timerbool === false && !this.scene.player.isHidden()) {
             this.timerbool = true;
             this.timer = this.scene.time.addEvent({
-                delay: this.newDelay,
+                delay: this.delay,
                 callback: onEvent,
                 callbackScope: this,
                 loop: false
@@ -28,8 +28,9 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
 
             function onEvent() {
                 this.spawnBird();
-                this.newDelay = this.initialDelay / (this.elapsed / this.duration + 1);
+                this.delay = this.spawnRate / (this.elapsed / this.duration + 1);
                 this.timerbool = false
+                console.log(this.delay)
             }
         }
 

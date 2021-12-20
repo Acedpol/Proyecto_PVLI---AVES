@@ -12,7 +12,7 @@ export default class Player extends Character {
    * @param {number} y coordenada y
    */
   constructor(scene, x, y) {
-    super(scene, x, y, 'protagonist', 150, 200, 1);
+    super(scene, x, y, 'protagonist', 150, 100, 1);
     this.wood = 0;
     this.rescued = false;
     this.hidden = false;
@@ -29,7 +29,6 @@ export default class Player extends Character {
     this.bat.disableBat();
     this.createanims();
     this.play('idown', true);
-
   }
 
   attack(dx, dy) {

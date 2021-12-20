@@ -3,6 +3,7 @@ export default class LevelCompleted extends Phaser.Scene {
         super({
           key: 'LevelCompleted'
         });
+        let levelNames = ['HouseMenu', 'level1', 'level2'];
     }    
 
     create() {
@@ -22,5 +23,4 @@ export default class LevelCompleted extends Phaser.Scene {
          this.scene.start('HouseMenu');
       }
     }
-    
 }

@@ -10,6 +10,7 @@ export default class Citizen extends Item {
    */
   constructor(scene, x, y) {
     super(scene, x, y, 'citizen');
+    this.setScale(0.5);
   }
 
   objectPickUp() {

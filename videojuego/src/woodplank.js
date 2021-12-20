@@ -10,6 +10,7 @@ export default class WoodPlank extends Item {
    */
   constructor(scene, x, y) {
     super(scene, x, y, 'wood');
+    this.setScale(1);
   }
 
   objectPickUp() {

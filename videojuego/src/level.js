@@ -26,9 +26,10 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
-    this.countdown = new Countdown(this, 180000);
+    this.countdown = new Countdown(this, 60000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
     this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    this.spawner2 = new Spawner(this, 200, 300).setDepth(2);
     this.wood = new WoodPlank(this, 140, 160).setDepth(3);
     this.heal = new Heal(this, 350, 350).setDepth(3);
     this.citizen = new Citizen(this, 200, 200).setDepth(3);

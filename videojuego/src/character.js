@@ -22,6 +22,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
     this.body.setCollideWorldBounds();
+    this.setScale(0.5);
   }
 
   followPlayer() {
