@@ -28,12 +28,12 @@ export default class Level extends Phaser.Scene {
     this.player = new Player(this, 200, 300).setDepth(3);
     this.countdown = new Countdown(this, 60000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
-    this.spawner = new Spawner(this, 150, 250).setDepth(2);
-    this.spawner2 = new Spawner(this, 200, 300).setDepth(2);
-    this.wood = new WoodPlank(this, 140, 160).setDepth(3);
-    this.heal = new Heal(this, 350, 350).setDepth(3);
-    this.citizen = new Citizen(this, 200, 200).setDepth(3);
-    this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
+    // this.spawner = new Spawner(this, 150, 250).setDepth(2);
+    // this.spawner2 = new Spawner(this, 200, 300).setDepth(2);
+    // this.wood = new WoodPlank(this, 140, 160).setDepth(3);
+    // this.heal = new Heal(this, 350, 350).setDepth(3);
+    // this.citizen = new Citizen(this, 200, 200).setDepth(3);
+    // this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
 
     // demo
     // this.createMap(
@@ -60,7 +60,7 @@ export default class Level extends Phaser.Scene {
     // );
 
 
-    this.createSpawners();
+    this.createObjects(); // creates all objects of the scene
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
@@ -123,23 +123,40 @@ export default class Level extends Phaser.Scene {
     this.countdown.start(this.handleCountdown.bind(this))
   }
 
-  createSpawners(){
-    // this.spawners = this.physics.add.group({key: 'spawners', frameQuantity: 0});
-    
+  createObjects(){    
     // el tag del ObjectLayer('...') es el mismo que TILED
     for (const objeto of this.map.getObjectLayer('objetos').objects) {
       if(objeto.properties) {
         // console.log("tiene properties");
         // console.log(objeto.properties);
         for (const { name, value } of objeto.properties) {
-          if (name === 'type' && value === 'spawner') {
-            new Spawner(this, objeto.x, objeto.y).setDepth(2);
-            // this.spawners.add(new Spawner(this, objeto.x, objeto.y).setDepth(2), true);
-          }
+          if (name === 'type')
+            switch(value) {
+              case 'spawner':
+                new Spawner(this, objeto.x, objeto.y).setDepth(2);
+                console.log("spawner");
+                break;
+              case 'woodplank':
+                new WoodPlank(this, objeto.x, objeto.y).setDepth(3);
+                console.log("woodplank");
+                break;
+              case 'hiddingSpot':
+                new HiddingSpot(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'citic':
+                new Citizen(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'heal':
+                new Heal(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              default:
+                break;
+            }           
         }
       }
     }
   }
+  
 
   // Crea las animaciones d elos pájaros
   createanims() {
