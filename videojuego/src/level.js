@@ -50,7 +50,6 @@ export default class Level extends Phaser.Scene {
     
     this.createObjects(); // creates all objects of the scene
 
-    this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
     // Vista o punto de vista: cámara
     this.cameras.main.startFollow(this.player);
@@ -159,11 +158,18 @@ export default class Level extends Phaser.Scene {
               case 'hiddingSpot':
                 new HiddingSpot(this, objeto.x, objeto.y).setDepth(3);
                 break;
-              case 'citic':
+              case 'citizen':
                 new Citizen(this, objeto.x, objeto.y).setDepth(3);
                 break;
               case 'heal':
                 new Heal(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'player':
+                this.player.x = objeto.x;
+                this.player.y = objeto.y;
+                break;
+              case 'coche':
+                this.goal = new Goal(this, objeto.x, objeto.y).setDepth(3)
                 break;
               default:
                 break;

@@ -286,7 +286,7 @@
                         {
                          "name":"type",
                          "type":"string",
-                         "value":"citic"
+                         "value":"citizen"
                         }],
                  "rotation":0,
                  "type":"",
@@ -2797,8 +2797,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
@@ -2806,8 +2806,8 @@
                  "properties":[
                         {
                          "name":"muro",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":true
                         }]
                 }, 
                 {
