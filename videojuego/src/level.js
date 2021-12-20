@@ -15,10 +15,14 @@ export default class Level extends Phaser.Scene {
   /**
    * Constructor de la escena
    */
-  constructor() {
+  constructor(datos) {
     super({
       key: 'Level'
     });
+  }
+
+  init(datos) {
+    this.level = datos.nivel;
   }
 
   /**
@@ -30,7 +34,18 @@ export default class Level extends Phaser.Scene {
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
 
     // inicia el mapa
-    this.createNivel1();
+    switch(this.level) {
+      case 0:
+        this.createDemo();
+        break;
+      case 1:
+        this.createNivel1();
+        break;
+      case 2:
+        this.createNivel2();
+        break;
+    }
+    
     this.createObjects(); // creates all objects of the scene
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
@@ -44,7 +59,7 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
     this.createanims();
-    this.createsounds();
+    // this.createsounds();
   }
 
   createNivel1() {

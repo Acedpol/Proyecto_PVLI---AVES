@@ -27,7 +27,7 @@ export default class HouseMenu extends Phaser.Scene {
 
     update() {
       if (this.start.isDown) {
-        this.scene.start('Level');
+        this.scene.start('Level', { nivel: 1 });
      }
     }
   
