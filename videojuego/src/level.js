@@ -35,19 +35,27 @@ export default class Level extends Phaser.Scene {
     this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
 
     // demo
-    this.createMap(
-      'demo', 'demo_map', 16, 16, 
-      'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
-      'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
-      'ground', 'colliders', 'sombras'
-    );
-
-    // level
     // this.createMap(
-    //   'level', 'demo_map', 16, 16, 
-    //   'TX_Props', null, null, null, null, null, 
-    //   'img_TX_Props', null, null, null, null, null, 
+    //   'demo', 'demo_map', 16, 16, 
+    //   'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
+    //   'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
     //   'ground', 'colliders', 'sombras'
+    // );
+
+    // level 01
+    // this.createMap(
+    //   'level', 'nivelM', 16, 16, 
+    //   'rpgUrbanKit1', 'urbankit-cambios', null, null, null, null, 
+    //   'img_tilemap', 'img_tilemap-copia', null, null, null, null, 
+    //   'ground', 'colliders', 'foreground'
+    // );
+
+    // level 02
+    // this.createMap(
+    //   'level', 'nivelJ', 16, 16, 
+    //   'rural', null, null, null, null, null, 
+    //   'img_urbankit', null, null, null, null, null, 
+    //   'ground', 'colliders', 'foreground'
     // );
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);

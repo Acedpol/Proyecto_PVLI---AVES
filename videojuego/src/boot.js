@@ -65,6 +65,17 @@ export default class Boot extends Phaser.Scene {
     this.load.image('img_TX_Tileset_Stone_Ground', 'TX Tileset Stone Ground.png');
     this.load.image('img_TX_Tileset_Wall', 'TX Tileset Wall.png');
 
+    // tileset niveles
+    this.load.setPath('./assets/maps/level/');
+    this.load.image('img_tilemap-copia', 'tilemap - copia.png');
+    this.load.image('img_tilemap', 'tilemap.png');
+
+    // load Level #01
+    this.load.tilemapTiledJSON('nivelM', 'NivelM.json');
+
+    // load Level #02
+    this.load.tilemapTiledJSON('nivelJ', 'NivelJ.json');
+
     this.load.setPath('assets/images/');
     this.load.image('mapa', 'map_demo.png');
     this.load.image('fondoCasa', 'casa.png');
