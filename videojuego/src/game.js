@@ -23,7 +23,7 @@ const config_aves = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true
+            debug: false
         }
     }
 };

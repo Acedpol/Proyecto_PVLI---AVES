@@ -12,6 +12,7 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite {
         this.scene.physics.add.existing(this, true);
         this.hideCooldown = false;
         this.interact = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+        this.doorSound = this.scene.sound.add('audio_hiddingSpot');
     }
 
     /**
@@ -22,6 +23,7 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite {
         super.preUpdate();
         if (this.scene.physics.overlap(this.scene.player, this) && this.interact.isDown && !this.scene.player.rescued && !this.hideCooldown) {
             this.hideCooldown = true;
+            this.doorSound.play();
             this.timer = this.scene.time.addEvent({
                 delay: 500,
                 callback: onEvent,

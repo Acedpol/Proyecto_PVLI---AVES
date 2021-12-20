@@ -87,10 +87,13 @@ export default class Boot extends Phaser.Scene {
     this.load.setPath('./assets/sounds/');
     this.load.audio('audio_bat','Bat.mp3');
     this.load.audio('audio_citizen','Citizen.mp3');
-    this.load.audio('audio_crow','Crow.wav');
+    this.load.audio('audio_crowKill','Crow.wav');
+    this.load.audio('audio_crowSpawn','BirdSpawn.wav');
+    this.load.audio('audio_car','Car.wav');
     this.load.audio('audio_heal','Heal.wav');
     this.load.audio('audio_hiddingSpot','HiddingSpot.wav');
     this.load.audio('audio_wood','Wood.wav');
+    this.load.audio('audio_gameover', 'GameOver.mp3')
   
   }
 
