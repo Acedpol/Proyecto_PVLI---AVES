@@ -6,7 +6,8 @@ export default class HiddingSpot extends Phaser.GameObjects.Sprite {
      * @param {number} y Coordenada Y
      */
     constructor(scene, x, y) {
-        super(scene, x, y, 'hiddingSpot');
+        super(scene, x, y, 'hidingSpot');
+        this.setScale(0.05);
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this, true);
         this.hideCooldown = false;

@@ -54,6 +54,10 @@ export default class Boot extends Phaser.Scene {
       frameWidth: 265,
       frameHeight: 137
     });
+    this.load.spritesheet('hidingSpot', 'phonebooth.png', {
+      frameWidth: 626,
+      frameHeight: 626
+    });
 
     // this.loadDemoMap();  
     this.load.setPath('./assets/maps/demo/');
