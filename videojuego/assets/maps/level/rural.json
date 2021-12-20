@@ -1,5 +1,13 @@
 { "columns":27,
- "image":"prueba\/Nueva carpeta\/rpgUrbanKit\/Tilemap\/tilemap.png",
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"..\/rural.json"
+        }
+    },
+ "image":"Nueva carpeta\/rpgUrbanKit\/Tilemap\/tilemap.png",
  "imageheight":305,
  "imagewidth":458,
  "margin":0,

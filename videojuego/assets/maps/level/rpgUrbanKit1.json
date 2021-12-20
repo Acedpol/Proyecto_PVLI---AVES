@@ -1,4 +1,12 @@
 { "columns":27,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"rpgUrbanKit1..json"
+        }
+    },
  "image":"..\/Tilesets\/rpgUrbanKit\/Tilemap\/tilemap.png",
  "imageheight":305,
  "imagewidth":458,
