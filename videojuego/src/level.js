@@ -46,8 +46,8 @@ export default class Level extends Phaser.Scene {
     // level 01
     this.createMap(
       'level', 'nivelM', 16, 16, 
-      'rpgUrbanKit1', 'urbankit-cambios', null, null, null, null, 
-      'img_tilemap', 'img_tilemap-copia', null, null, null, null, 
+      'rpgUrbanKit1', null, null, null, null, null, 
+      'img_tilemap', null, null, null, null, null, 
       'ground', 'colliders', 'foreground'
     );
 
@@ -58,6 +58,9 @@ export default class Level extends Phaser.Scene {
     //   'img_tilemap', null, null, null, null, null, 
     //   'ground', 'colliders', 'foreground'
     // );
+
+
+    this.createSpawners();
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
@@ -118,6 +121,24 @@ export default class Level extends Phaser.Scene {
 
     //creación del timer principal
     this.countdown.start(this.handleCountdown.bind(this))
+  }
+
+  createSpawners(){
+    // this.spawners = this.physics.add.group({key: 'spawners', frameQuantity: 0});
+    
+    // el tag del ObjectLayer('...') es el mismo que TILED
+    for (const objeto of this.map.getObjectLayer('objetos').objects) {
+      if(objeto.properties) {
+        // console.log("tiene properties");
+        // console.log(objeto.properties);
+        for (const { name, value } of objeto.properties) {
+          if (name === 'type' && value === 'spawner') {
+            new Spawner(this, objeto.x, objeto.y).setDepth(2);
+            // this.spawners.add(new Spawner(this, objeto.x, objeto.y).setDepth(2), true);
+          }
+        }
+      }
+    }
   }
 
   // Crea las animaciones d elos pájaros
