@@ -71,7 +71,6 @@ export default class Boot extends Phaser.Scene {
 
     // load Level #01
     this.load.setPath('./assets/maps/level/');
-    this.load.image('img_tilemap-copia', 'tilemap - copia.png');
     this.load.image('img_tilemap', 'tilemap.png');
     this.load.tilemapTiledJSON('nivelM', 'NivelM.json');
 
