@@ -7,6 +7,7 @@ import Heal from './heal.js';
 import Countdown from './countdown.js';
 import UI from './ui.js'
 import HiddingSpot from './hiddingSpot.js';
+import Bird from './bird.js';
 /**
  * Escena principal del juego.
  * @extends Phaser.Scene
@@ -31,7 +32,7 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
-    this.countdown = new Countdown(this, 60000);
+    this.countdown = new Countdown(this, 180000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
 
     // inicia el mapa
@@ -59,6 +60,8 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.immovableLayer); // objetos/colliders
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
+
+    this.birdSound = this.sound.add('audio_citizen');
     this.createanims();
     // this.createsounds();
   }
@@ -196,7 +199,7 @@ export default class Level extends Phaser.Scene {
   createsounds()
   {
 
-    this.birdSound = this.bird.scene.sound.add('audio_crow');
+    this.birdSound = this.scene.sound.add('audio_crow');
     this.woodSound = this.scene.sound.add("audio_wood");
     
   }
