@@ -34,8 +34,21 @@ export default class Level extends Phaser.Scene {
     this.citizen = new Citizen(this, 200, 200).setDepth(3);
     this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
 
+    // demo
+    this.createMap(
+      'demo', 'demo_map', 16, 16, 
+      'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
+      'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
+      'ground', 'colliders', 'sombras'
+    );
 
-    this.createMap(); // todo lo necesario para el mapa (sin objetos por ahora)
+    // level
+    // this.createMap(
+    //   'level', 'demo_map', 16, 16, 
+    //   'TX_Props', null, null, null, null, null, 
+    //   'img_TX_Props', null, null, null, null, null, 
+    //   'ground', 'colliders', 'sombras'
+    // );
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
@@ -50,41 +63,49 @@ export default class Level extends Phaser.Scene {
     this.createanims();
   }
 
-  createMap() {
+  createMap(
+    _type,
+    _clave, 
+    _tileHeight, 
+    _tileWidth, 
+    _tileset0, _tileset1, _tileset2, _tileset3, _tileset4, _tileset5, 
+    _tileset_img0, _tileset_img1, _tileset_img2, _tileset_img3, _tileset_img4, _tileset_img5, 
+    _layer0, _layer1, _layer2
+    ) {
     // creación del mapa:
     this.map = this.make.tilemap({
-      key: 'demo_map', // nombre dado al mapa.json en el boot.js
-      tileWidth: 16,
-      tileHeight: 16
+      key: _clave, // nombre dado al mapa.json en el boot.js
+      tileWidth: _tileWidth,
+      tileHeight: _tileHeight
     });
 
     // asignación de imagenes (tileset) a el 'name' de cada tileset en el pre-configurado.json:
-    const tileset = this.map.addTilesetImage('TX_Props', 'img_TX_Props');
-    const tileset1 = this.map.addTilesetImage('TX_Shadow', 'img_TX_Shadow');
-    const tileset2 = this.map.addTilesetImage('TX_Struct', 'img_TX_Struct');
-    const tileset3 = this.map.addTilesetImage('TX_Tileset_Grass', 'img_TX_Tileset_Grass');
-    const tileset4 = this.map.addTilesetImage('TX_Tileset_Stone_Ground', 'img_TX_Tileset_Stone_Ground');
-    const tileset5 = this.map.addTilesetImage('TX_Tileset_Wall', 'img_TX_Tileset_Wall');
+    if (_tileset0 != null) var tileset = this.map.addTilesetImage(_tileset0, _tileset_img0);
+    if (_tileset1 != null) var tileset1 = this.map.addTilesetImage(_tileset1, _tileset_img1);
+    if (_tileset2 != null) var tileset2 = this.map.addTilesetImage(_tileset2, _tileset_img2);
+    if (_tileset3 != null) var tileset3 = this.map.addTilesetImage(_tileset3, _tileset_img3);
+    if (_tileset4 != null) var tileset4 = this.map.addTilesetImage(_tileset4, _tileset_img4);
+    if (_tileset5 != null) var tileset5 = this.map.addTilesetImage(_tileset5, _tileset_img5);
 
     // creación de layers: 3 principales (fondo, fore y colliders)
-    this.groundLayer = this.map.createLayer('ground', [tileset2, tileset3, tileset4, tileset5]).setDepth(1); // 'BackGroundLayer'
-    this.immovableLayer = this.map.createLayer('colliders', [tileset, tileset2, tileset5]).setDepth(3); // 'GroundLayer'
-    this.backLayer = this.map.createLayer('sombras', [tileset1, tileset3, tileset4]).setDepth(2); // 'ForeGroundLayer'
+    if (_type === 'demo') {
+      this.groundLayer = this.map.createLayer(_layer0, [tileset2, tileset3, tileset4, tileset5]).setDepth(1); // 'BackGroundLayer'
+      this.immovableLayer = this.map.createLayer(_layer1, [tileset, tileset2, tileset5]).setDepth(3); // 'GroundLayer'
+      this.backLayer = this.map.createLayer(_layer2, [tileset1, tileset3, tileset4]).setDepth(2); // 'ForeGroundLayer'
+    }
+    else if (_type === 'level') {
+      this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'BackGroundLayer'
+      this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(3); // 'GroundLayer'
+      this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(2); // 'ForeGroundLayer'
+    }
 
-    // definición de colisiones:
-    this.groundLayer.setCollisionByProperty({
-      muro: true
-    }); // -> con propiedad en TILED
-    this.immovableLayer.setCollisionByProperty({
-      muro: true
-    }); // -> con propiedad en TILED
-    this.backLayer.setCollisionByProperty({
-      muro: true
-    });
+    // definición de colisiones: -> con propiedad en TILED
+    this.groundLayer.setCollisionByProperty({ muro: true });
+    this.immovableLayer.setCollisionByProperty({ muro: true });
+    this.backLayer.setCollisionByProperty({ muro: true });
 
     // tamaño del mundo de juego:
     this.physics.world.setBounds(0, 0, this.map.tileWidth * this.map.width, this.map.tileHeight * this.map.height);
-
 
     //creación del timer principal
     this.countdown.start(this.handleCountdown.bind(this))
