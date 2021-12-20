@@ -28,6 +28,9 @@ export default class Player extends Character {
     this.bat = this.scene.add.existing(new Baseballbat(this.scene, 0, 0).setDepth(4));
     this.bat.disableBat();
     this.createanims();
+    //this.load.audio('audio_bat','Bat.mp3');
+    this.batSound = this.scene.sound.add('audio_bat');
+
     this.play('idown', true);
   }
 
@@ -40,7 +43,7 @@ export default class Player extends Character {
       this.bat.angle = -90;
     } 
     this.bat.enableBody(true, this.x + dx, this.y + dy, true, true)
-
+    this.batSound.play();//
     this.timer = this.scene.time.addEvent({
       delay: 250,
       callback: onEvent,

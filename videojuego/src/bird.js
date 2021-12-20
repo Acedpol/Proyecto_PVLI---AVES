@@ -11,6 +11,7 @@ export default class Bird extends Character {
         this.follow = true;
     }
 
+
     preUpdate(t, dt) {
         super.preUpdate(t, dt);
         //Si el jugador no está escondido le persigue
@@ -65,6 +66,7 @@ export default class Bird extends Character {
         if (this.scene.player.bat !== null && this.scene.physics.overlap(this.scene.player.bat, this) && this.damaged === false) {
             this.reciveDamage(this.scene.player.damage);
             this.damaged = true;
+           // this.birdSound.play();
             if (this.damaged === true && this.active === true) {
                 this.timer = this.scene.time.addEvent({
                     delay: 250,

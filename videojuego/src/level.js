@@ -73,6 +73,7 @@ export default class Level extends Phaser.Scene {
     this.physics.add.collider(this.player, this.backLayer); // sombras
 
     this.createanims();
+    this.createsounds();
   }
 
   createMap(
@@ -179,6 +180,16 @@ export default class Level extends Phaser.Scene {
       repeat: 0
     });
   }
+
+  createsounds()
+  {
+
+    this.birdSound = this.bird.scene.sound.add('audio_crow');
+    this.woodSound = this.scene.sound.add("audio_wood");
+    
+  }
+
+
   handleCountdown() {
   }
 
