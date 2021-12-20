@@ -43,7 +43,8 @@ export default class Bird extends Character {
     }
 
     playerImpact() {
-        if (this.scene.physics.overlap(this.scene.player, this) && this.damagedplayer === false && !this.scene.player.isHidden()) {
+        if ((this.scene.physics.overlap(this.scene.player, this) || (this.scene.player.rescued && this.scene.physics.overlap(this.scene.player.following, this))) && 
+        this.damagedplayer === false && !this.scene.player.isHidden()) {
             this.scene.player.reciveDamage(this.damage);
             this.damagedplayer = true;
             if (this.damagedplayer === true && this.active === true) {

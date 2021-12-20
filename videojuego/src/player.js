@@ -2,6 +2,7 @@ import Character from './character.js';
 import FollowingCitizen from './followingCitizen.js';
 import Baseballbat from './baseballbat.js';
 import HiddingSpot from './hiddingSpot.js';
+import GameOver from './gameOver.js';
 export default class Player extends Character {
 
   /**
@@ -233,8 +234,13 @@ export default class Player extends Character {
 
   reciveDamage(damage) {
     this.hp -= damage;
-    if (this.hp <= 0)
+    if (this.hp <= 0) {
+      this.scene.scene.add("GameOver",new GameOver);
+      this.scene.scene.remove("UI");
+      this.scene.scene.stop("Level");
+      this.scene.scene.start("GameOver");
       this.destroy();
+    }
   }
 
   getPos() {
