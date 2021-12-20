@@ -16,14 +16,15 @@ export default class Level extends Phaser.Scene {
   /**
    * Constructor de la escena
    */
-  constructor(datos) {
+  constructor() {
     super({
       key: 'Level'
     });
+    this.lvl = 0;
   }
 
   init(datos) {
-    this.level = datos.nivel;
+    this.level = datos;
   }
 
   /**
@@ -33,7 +34,6 @@ export default class Level extends Phaser.Scene {
     this.player = new Player(this, 200, 300).setDepth(3);
     this.countdown = new Countdown(this, 180000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
-<<<<<<< Updated upstream
 
     // inicia el mapa
     switch(this.level) {
@@ -41,37 +41,14 @@ export default class Level extends Phaser.Scene {
         this.createDemo();
         break;
       case 1:
-        this.createNivel1();
+        this.createNivel2();
         break;
       case 2:
-        this.createNivel2();
+        this.createNivel1();
         break;
     }
     
     this.createObjects(); // creates all objects of the scene
-=======
-    this.spawner = new Spawner(this, 150, 250).setDepth(2);
-    this.wood = new WoodPlank(this, 140, 160).setDepth(3);
-    this.heal = new Heal(this, 350, 350).setDepth(3);
-    this.citizen = new Citizen(this, 200, 200).setDepth(3);
-    this.hide = new HiddingSpot(this, 100, 220).setDepth(3);
-
-    // demo
-    this.createMap(
-      'demo', 'demo_map', 16, 16, 
-      'TX_Props', 'TX_Shadow', 'TX_Struct', 'TX_Tileset_Grass', 'TX_Tileset_Stone_Ground', 'TX_Tileset_Wall', 
-      'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
-      'ground', 'colliders', 'sombras'
-    );
-
-    // level
-    // this.createMap(
-    //   'level', 'demo_map', 16, 16, 
-    //   'TX_Props', null, null, null, null, null, 
-    //   'img_TX_Props', null, null, null, null, null, 
-    //   'ground', 'colliders', 'sombras'
-    // );
->>>>>>> Stashed changes
 
     this.goal = new Goal(this, this.map.tileWidth * this.map.width - 150, 200).setDepth(3);
 
@@ -86,7 +63,6 @@ export default class Level extends Phaser.Scene {
 
     this.birdSound = this.sound.add('audio_citizen');
     this.createanims();
-<<<<<<< Updated upstream
     // this.createsounds();
   }
 
@@ -115,9 +91,6 @@ export default class Level extends Phaser.Scene {
       'img_TX_Props', 'img_TX_Shadow', 'img_TX_Struct', 'img_TX_Tileset_Grass', 'img_TX_Tileset_Stone_Ground', 'img_TX_Tileset_Wall',
       'ground', 'colliders', 'sombras'
     );
-=======
-    //this.createsounds();
->>>>>>> Stashed changes
   }
 
   createMap(
@@ -168,6 +141,39 @@ export default class Level extends Phaser.Scene {
     this.countdown.start(this.handleCountdown.bind(this))
   }
 
+  createObjects(){    
+    // el tag del ObjectLayer('...') es el mismo que TILED
+    for (const objeto of this.map.getObjectLayer('objetos').objects) {
+      if(objeto.properties) {
+        // console.log("tiene properties");
+        // console.log(objeto.properties);
+        for (const { name, value } of objeto.properties) {
+          if (name === 'type')
+            switch(value) {
+              case 'spawner':
+                new Spawner(this, objeto.x, objeto.y).setDepth(2);
+                break;
+              case 'woodplank':
+                new WoodPlank(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'hiddingSpot':
+                new HiddingSpot(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'citic':
+                new Citizen(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              case 'heal':
+                new Heal(this, objeto.x, objeto.y).setDepth(3);
+                break;
+              default:
+                break;
+            }           
+        }
+      }
+    }
+  }
+  
+
   // Crea las animaciones d elos pájaros
   createanims() {
     this.anims.create({
@@ -203,6 +209,7 @@ export default class Level extends Phaser.Scene {
   }
 
   update() {
-    this.countdown.update()
+    this.countdown.update();
+    if (this.player.hp <= 0) this.level = 0;
   }
 }
