@@ -15,14 +15,14 @@ export default class Level extends Phaser.Scene {
   /**
    * Constructor de la escena
    */
-  constructor(datos) {
+  constructor() {
     super({
       key: 'Level'
     });
   }
 
   init(datos) {
-    this.level = datos.nivel;
+    this.level = datos;
   }
 
   /**
@@ -39,10 +39,10 @@ export default class Level extends Phaser.Scene {
         this.createDemo();
         break;
       case 1:
-        this.createNivel1();
+        this.createNivel2();
         break;
       case 2:
-        this.createNivel2();
+        this.createNivel1();
         break;
     }
     
@@ -148,11 +148,9 @@ export default class Level extends Phaser.Scene {
             switch(value) {
               case 'spawner':
                 new Spawner(this, objeto.x, objeto.y).setDepth(2);
-                console.log("spawner");
                 break;
               case 'woodplank':
                 new WoodPlank(this, objeto.x, objeto.y).setDepth(3);
-                console.log("woodplank");
                 break;
               case 'hiddingSpot':
                 new HiddingSpot(this, objeto.x, objeto.y).setDepth(3);
@@ -207,6 +205,7 @@ export default class Level extends Phaser.Scene {
   }
 
   update() {
-    this.countdown.update()
+    this.countdown.update();
+    if (this.player.hp <= 0) this.level = 0;
   }
 }

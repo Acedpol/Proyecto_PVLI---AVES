@@ -3,11 +3,12 @@ export default class HouseMenu extends Phaser.Scene {
         super({
           key: 'HouseMenu'
         });
-
+        this.lvl = 0;
     }    
-
+    
+    
     create() {
-      this.background = this.add.image(360,250,"fondoCasa");
+      this.background = this.add.image(360, 250,"fondoCasa");
       this.title = this.add.text(480, 60, "AVES: ", {
         fontSize: 58,
         align: 'center'
@@ -21,13 +22,12 @@ export default class HouseMenu extends Phaser.Scene {
         align: 'right'
       })
       this.start = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-
     }
 
     update() {
       if (this.start.isDown) {
-        this.scene.start('Level', { nivel: 1 });
+        this.lvl++;
+        this.scene.start('Level', this.lvl);
      }
     }
   

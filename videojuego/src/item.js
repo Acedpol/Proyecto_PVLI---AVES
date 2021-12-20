@@ -7,9 +7,9 @@ export default class Item extends Phaser.GameObjects.Sprite {
      */
     constructor(scene, x, y, type) {
         super(scene, x, y, type);
+        this.setScale(0.5);
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this, true);
-        this.setScale(0.5);
     }
 
     /**
