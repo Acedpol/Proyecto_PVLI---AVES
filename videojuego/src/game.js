@@ -3,7 +3,7 @@ import Level from './level.js';
 import GameOver from './gameover.js';
 import LevelCompleted from './levelcompleted.js';
 import HouseMenu from './housemenu.js';
-import PauseMenu from './pauseMenu.js';
+import PauseMenu from './pausemenu.js';
 
 /**
  * Inicio del juego en Phaser. Creamos el archivo de configuración del juego y creamos
