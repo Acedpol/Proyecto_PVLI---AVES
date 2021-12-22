@@ -1,5 +1,8 @@
 export default class HouseMenu extends Phaser.Scene {
-    constructor(numLvl) {
+    /**
+   * Constructor de HouseMenu
+   */
+    constructor() {
         super({
           key: 'HouseMenu'
         });

@@ -30,7 +30,7 @@ export default class Level extends Phaser.Scene {
    * Creación de los elementos de la escena principal de juego
    */
   create() {
-    this.player = new Player(this, 200, 300).setDepth(3);
+    this.player = new Player(this, 200, 300).setDepth(5);
     this.countdown = new Countdown(this, 180000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
 

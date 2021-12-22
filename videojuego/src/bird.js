@@ -21,7 +21,7 @@ export default class Bird extends Character {
         if (!this.scene.player.isHidden() && this.follow) this.followPlayer();
         //Si el jugador está escondido se mueve de forma aleatoria
         else {
-           if (this.redirectCooldown === false) {
+           if (!this.redirectCooldown) {
                this.redirectCooldown = true;
                this.timer = this.scene.time.addEvent({
                    delay: 500,
@@ -47,11 +47,12 @@ export default class Bird extends Character {
     }
 
     playerImpact() {
-        if ((this.scene.physics.overlap(this.scene.player, this) || (this.scene.player.rescued && this.scene.physics.overlap(this.scene.player.following, this))) && 
-        this.damagedplayer === false && !this.scene.player.isHidden()) {
+        if ((this.scene.physics.overlap(this.scene.player, this) || 
+        (this.scene.player.rescued && this.scene.physics.overlap(this.scene.player.following, this))) && 
+        !this.damagedplayer && !this.scene.player.isHidden()) {
             this.scene.player.reciveDamage(this.damage);
             this.damagedplayer = true;
-            if (this.damagedplayer === true && this.active === true) {
+            if (this.damagedplayer && this.active) {
                 this.playertimer = this.scene.time.addEvent({
                     delay: 250,
                     callback: playerDamageTimer,
@@ -66,10 +67,10 @@ export default class Bird extends Character {
     }
 
     batImpact() {
-        if (this.scene.player.bat !== null && this.scene.physics.overlap(this.scene.player.bat, this) && this.damaged === false) {
+        if (this.scene.player.bat !== null && this.scene.physics.overlap(this.scene.player.bat, this) && !this.damaged) {
             this.reciveDamage(this.scene.player.damage);
             this.damaged = true;
-            if (this.damaged === true && this.active === true) {
+            if (this.damaged && this.active) {
                 this.timer = this.scene.time.addEvent({
                     delay: 250,
                     callback: birdDamageTimer,
@@ -87,7 +88,7 @@ export default class Bird extends Character {
     reciveDamage(damage) {
         this.hp -= damage;
         if (this.hp <= 0) {
-            this.corpse = this.scene.add.existing(new Deadbird(this.scene, this.x, this.y).setDepth(4));
+            this.corpse = this.scene.add.existing(new Deadbird(this.scene, this.x, this.y, this.movement.x).setDepth(4));
             this.birdKillSound.play();
             this.destroy();
         }

@@ -21,7 +21,7 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
         //si el jugador está lejos no se spawnean pájaros
         if (this.distance < 300) {
             // calculo del delay de spawn
-            if (this.timerbool === false && !this.scene.player.isHidden()) {
+            if (!this.timerbool && !this.scene.player.isHidden()) {
                 this.timerbool = true;
                 this.timer = this.scene.time.addEvent({
                     delay: this.delay,

@@ -3,7 +3,6 @@ export default class LevelCompleted extends Phaser.Scene {
     super({
       key: 'LevelCompleted'
     });
-    this.level = 0;
   }
 
   create() {
@@ -20,9 +19,7 @@ export default class LevelCompleted extends Phaser.Scene {
 
   update() {
     if (this.continue.isDown) {
-      this.level++;
-      this.scene.start('HouseMenu', this.level);
-      // this.scene.start('Level', this.level);
+      this.scene.start('HouseMenu');
     }
   }
 }
