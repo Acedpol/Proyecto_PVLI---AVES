@@ -1,8 +1,8 @@
 import Boot from './boot.js';
 import Level from './level.js';
-import GameOver from './gameover.js';
-import LevelCompleted from './levelcompleted.js';
-import HouseMenu from './housemenu.js';
+import GameOver from './gameOver.js';
+import LevelCompleted from './levelCompleted.js';
+import HouseMenu from './houseMenu.js';
 import PauseMenu from './pauseMenu.js';
 
 /**
@@ -24,7 +24,7 @@ const config_aves = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: false
+            debug: true
         }
     }
 };
