@@ -91,8 +91,8 @@ export default class Level extends Phaser.Scene {
   createNivel3() {
     this.createMap(
       'level', 'nivel3', 16, 16, 
-      'rpgUrbanKit1', 'urbankit-cambios', null, null, null, null, 
-      'img_village', 'img_village', null, null, null, null, 
+      'rpgUrbanKit1', 'tilemap-playa', null, null, null, null, 
+      'img_tilemap', 'img_tilemap2', null, null, null, null, 
       'ground', 'colliders', 'foreground'
       );
     }
@@ -146,9 +146,16 @@ export default class Level extends Phaser.Scene {
       this.backLayer = this.map.createLayer(_layer2, [tileset1, tileset3, tileset4]).setDepth(2); // 'ForeGroundLayer'
     }
     else if (_type === 'level') {
-      this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'BackGroundLayer'
-      this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(2); // 'GroundLayer'
-      this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(3); // 'ForeGroundLayer'
+      if (_tileset1 != null) {
+        this.groundLayer = this.map.createLayer(_layer0, [_tileset0, _tileset1]).setDepth(1); // 'BackGroundLayer'
+        this.immovableLayer = this.map.createLayer(_layer1, [_tileset0, _tileset1]).setDepth(2); // 'GroundLayer'
+        this.backLayer = this.map.createLayer(_layer2, [_tileset0, _tileset1]).setDepth(3); // 'ForeGroundLayer'
+      }
+      else {
+        this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'BackGroundLayer'
+        this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(2); // 'GroundLayer'
+        this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(3); // 'ForeGroundLayer'
+      }
     }
 
     // definición de colisiones: -> con propiedad en TILED
