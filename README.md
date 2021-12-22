@@ -3,7 +3,8 @@
  
  > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
  ___
- #### Proyecto desarrollado por: _WAID GAMES_
+ #### Proyecto desarrollado por: _Grupo 12_
+ ![imagen deljuego][portada]
  ___
  #### IMPORTANTE:
  - En la carpeta **_videojuego_** se encuentran los archivos que componen el videojuego.
@@ -260,6 +261,7 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 [WEB]: https://acedpol.github.io/Proyecto_PVLI---AVES/ "Web del Proyecto"
 [Sprites]: https://www.spriters-resource.com/
 [Otros Sprites]: https://www.spriters-resource.com/
+[portada]: ./assets/images/Portada.png
 <!-- [logo]: assets/images/adaptacion.png "Platero's Tale"
 [video]: https://youtu.be/q81Hx4C6JRw
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
