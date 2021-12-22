@@ -4,6 +4,7 @@
  > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
  ___
  #### Proyecto desarrollado por: _WAID GAMES_
+ ![Pantalla inicio][portada]
  ___
  #### IMPORTANTE:
  - En la carpeta **_videojuego_** se encuentran los archivos que componen el videojuego.
@@ -15,6 +16,8 @@
  ###### Pivotal Tracker: [visualizar en la web][Pivotal Tracker]
 
  ###### Link Arquitectura: [visualizar UML][Nueva Arquitectura]
+ 
+ ###### Video-demo final: [demo final][video]
  ___
  
  ##### Webs útiles:
@@ -177,7 +180,7 @@ Se llega a la ubicación de cada nivel en coche, una vez ahí se tiene que compl
 
 4.1. **Historia**
 
-El protagonista regresa a su pueblo invadido por pájaros y sus amigos y vecinos en peligro, armado con su fiel bate intentará rescatar a todos o morirá en el intento
+El protagonista regresa a su pueblo invadido por pájaros y sus amigos y vecinos en peligro, armado con su fiel bate intentará rescatar a todos o morirá en el intento.
 
 5. **Arquitectura y Gestión**
 - Pivotal como sistema de gestión.
@@ -195,27 +198,17 @@ El protagonista regresa a su pueblo invadido por pájaros y sus amigos y vecinos
 
 ● Hotline Miami: Cámara, movimiento por la escena y combate a melé.
 
-<!-- **Arquitectura**
-
-![Arquitectura][capturaarquitectura]
-
- ###### Link Arquitectura: [Diagrama: Platero's Tale (on-line)][Nueva Arquitectura]
-
- ###### Antiguo GDD: [Game Design Document][GDD] - [Archivo en repositorio][GDD en repo]
-
- ###### Arquitectura Antigua: [Diagrama: Platero y Yo (on-line)][Arquitectura antigua] - [Formato PNG][PNG Arquitectura antigua] -->
+![begining][img1]
+![attack][img2]
+![hidden][img3]
 
 [Nueva arquitectura]: assets/images/aves.drawio.png "Visualizador web"
 [Pivotal Tracker]: https://www.pivotaltracker.com/n/projects/2534895 "Herramienta de gestión del Proyecto"
 [WEB]: https://acedpol.github.io/Proyecto_PVLI---AVES/ "Web del Proyecto"
 [Sprites]: https://www.spriters-resource.com/
 [Otros Sprites]: https://www.spriters-resource.com/
-<!-- [logo]: assets/images/adaptacion.png "Platero's Tale"
-[video]: https://youtu.be/q81Hx4C6JRw
-[GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
-[GDD en repo]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Link a la ubicación en el repositorio"
-[PNG Arquitectura antigua]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/Arquitectura%20Platero%20y%20Yo.png
-[PNG Nueva Arquitectura]: https://github.com/Acedpol/Proyecto_PVLI_/blob/master/assets/documents/Arquitectura%20-%20UML/ArquitecturaPlaterosTale_1.1.png
-[capturamenu]: assets/images/captura.png "Captura de Menu"
-[capturajuego]: assets/images/juego.png "Captura de Juego"
-[capturaarquitectura]: assets/images/ArquitecturaNuevaPNG.png "Arquitectura" -->
+[portada]: ./assets/images/Portada.png
+[img1]: ./assets/images/begin.PNG
+[img2]: ./assets/images/sangre.PNG
+[img3]: ./assets/images/oculto.PNG
+[video]: https://youtu.be/vDG3FNYQiNU
