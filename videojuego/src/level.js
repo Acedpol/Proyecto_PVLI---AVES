@@ -60,7 +60,7 @@ export default class Level extends Phaser.Scene {
 
     this.birdSound = this.sound.add('audio_citizen');
     this.createanims();
-    // this.createsounds();
+    this.createsounds();
   }
 
   createNivel1() {
@@ -202,9 +202,9 @@ export default class Level extends Phaser.Scene {
 
   createsounds()
   {
-
-    this.birdSound = this.scene.sound.add('audio_crow');
-    this.woodSound = this.scene.sound.add("audio_wood");
+    this.woodSound = this.sound.add('audio_wood');
+    this.birdKillSound = this.sound.add('audio_crowKill');
+    this.birdSpawnSound = this.sound.add('audio_crowSpawn');
     
   }
 

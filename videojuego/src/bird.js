@@ -9,9 +9,7 @@ export default class Bird extends Character {
         this.damagedplayer = false;
         this.redirectCooldown = false;
         this.follow = true;
-        this.birdKillSound = this.scene.sound.add('audio_crowKill');
-        this.birdSpawnSound = this.scene.sound.add('audio_crowSpawn');
-        this.birdSpawnSound.play();
+        this.scene.birdSpawnSound.play();
     }
 
 
@@ -89,7 +87,7 @@ export default class Bird extends Character {
         this.hp -= damage;
         if (this.hp <= 0) {
             this.corpse = this.scene.add.existing(new Deadbird(this.scene, this.x, this.y, this.movement.x).setDepth(4));
-            this.birdKillSound.play();
+            this.scene.birdKillSound.play();
             this.destroy();
         }
     }

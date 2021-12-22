@@ -24,8 +24,8 @@ export default class PauseMenu extends Phaser.Scene {
 
     update() {
       if (Phaser.Input.Keyboard.JustDown(this.pause)) {
-        this.title.setActive(false);
-        this.subtitle.setActive(false);
+        this.title.destroy();
+        this.subtitle.destroy();
         this.scene.pause();
         this.scene.resume('Level');
      }
