@@ -45,6 +45,9 @@ export default class Level extends Phaser.Scene {
       case 2:
         this.createNivel1();
         break;
+      case 3:
+        this.createNivel3();
+        break;
     }
     this.createObjects(); // creates all objects of the scene
 
@@ -77,6 +80,15 @@ export default class Level extends Phaser.Scene {
       'level', 'nivelM', 16, 16, 
       'rpgUrbanKit1', null, null, null, null, null, 
       'img_tilemap', null, null, null, null, null, 
+      'ground', 'colliders', 'foreground'
+    );
+  }
+
+  createNivel3() {
+    this.createMap(
+      'level', 'nivelP', 16, 16, 
+      'village', null, null, null, null, null, 
+      'img_village', null, null, null, null, null, 
       'ground', 'colliders', 'foreground'
     );
   }

@@ -6,7 +6,7 @@ export default class HouseMenu extends Phaser.Scene {
         super({
           key: 'HouseMenu'
         });
-        this.lvl = 0;
+        this.lvl = 3;
     }    
     
     
