@@ -30,7 +30,7 @@ export default class Level extends Phaser.Scene {
    * Creación de los elementos de la escena principal de juego
    */
   create() {
-    this.player = new Player(this, 200, 300).setDepth(5);
+    this.player = new Player(this, 200, 300).setDepth(3);
     this.countdown = new Countdown(this, 180000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
 
@@ -147,8 +147,8 @@ export default class Level extends Phaser.Scene {
     }
     else if (_type === 'level') {
       this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'BackGroundLayer'
-      this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(3); // 'GroundLayer'
-      this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(2); // 'ForeGroundLayer'
+      this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(2); // 'GroundLayer'
+      this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(3); // 'ForeGroundLayer'
     }
 
     // definición de colisiones: -> con propiedad en TILED
