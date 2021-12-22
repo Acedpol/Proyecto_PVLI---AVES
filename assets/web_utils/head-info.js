@@ -11,6 +11,6 @@ document.write(`
 <!-- fevicon -->
 <link rel="icon" href="./assets/images/logo-cuervo.ico" type="image/x-icon" />
 <!-- game style sheet -->
-<script src="./videojuego/lib/phaser.min.js"></script>
+<script src="./videojuego/lib/phaser.js"></script>
 <link rel="stylesheet" href="./assets/css/aves-style.css">
 `)
