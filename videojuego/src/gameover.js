@@ -3,6 +3,7 @@ export default class GameOver extends Phaser.Scene {
         super({
           key: 'GameOver'
         });        
+        this.pass = false;
       }    
 
     create() {
@@ -22,7 +23,7 @@ export default class GameOver extends Phaser.Scene {
 
     update() {
       if (this.restart.isDown) {
-         this.scene.start('HouseMenu');
+         this.scene.start('HouseMenu', {win: false});
       }
     }
     

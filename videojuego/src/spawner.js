@@ -34,7 +34,6 @@ export default class Spawner extends Phaser.GameObjects.Sprite {
                     this.spawnBird();
                     this.delay = this.spawnRate / (this.elapsed / this.duration + 1);
                     this.timerbool = false
-                    console.log(this.delay)
                 }
             }
         }

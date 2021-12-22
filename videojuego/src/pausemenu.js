@@ -18,7 +18,6 @@ export default class PauseMenu extends Phaser.Scene {
         fontSize: 28,
         align: 'right'
       })
-      console.log("aaa");
       this.pause = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     }
 
