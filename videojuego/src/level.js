@@ -53,7 +53,9 @@ export default class Level extends Phaser.Scene {
         break;
     }
     this.createObjects(); // creates all objects of the scene
-
+    if(this.level == 4){
+      this.goal.setDepth(-1);
+    }
 
     // Vista o punto de vista: cámara
     this.cameras.main.startFollow(this.player);
@@ -152,9 +154,9 @@ export default class Level extends Phaser.Scene {
         this.backLayer = this.map.createLayer(_layer2, [_tileset0, _tileset1]).setDepth(3); // 'ForeGroundLayer'
       }
       else {
-        this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'BackGroundLayer'
-        this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(2); // 'GroundLayer'
-        this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(3); // 'ForeGroundLayer'
+        this.groundLayer = this.map.createLayer(_layer0, _tileset0).setDepth(1); // 'Ground'
+        this.immovableLayer = this.map.createLayer(_layer1, _tileset0).setDepth(2); // 'Colliders'
+        this.backLayer = this.map.createLayer(_layer2, _tileset0).setDepth(3); // 'Foreground'
       }
     }
 

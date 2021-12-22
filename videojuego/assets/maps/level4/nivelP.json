@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"nivelP.json"
+         "format":"json"
         }
     },
  "height":50,
@@ -59,24 +58,6 @@
          "objects":[
                 {
                  "height":0,
-                 "id":1,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"citizen"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":589.625806451613,
-                 "y":126.348387096774
-                }, 
-                {
-                 "height":0,
                  "id":2,
                  "name":"",
                  "point":true,
@@ -90,26 +71,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":365.74533106961,
-                 "y":170.681154499151
-                }, 
-                {
-                 "height":0,
-                 "id":3,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"citizen"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":166.247877758913,
-                 "y":230.53039049236
+                 "x":359.74533106961,
+                 "y":121.681154499151
                 }, 
                 {
                  "height":0,
@@ -200,24 +163,6 @@
                  "width":0,
                  "x":467.710696095076,
                  "y":623.983701188455
-                }, 
-                {
-                 "height":0,
-                 "id":9,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"citizen"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":640.608488964346,
-                 "y":459.95246179966
                 }, 
                 {
                  "height":0,
@@ -380,6 +325,96 @@
                  "width":0,
                  "x":182.872665534805,
                  "y":333.604074702886
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"heal"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":158,
+                 "y":213
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"woodplank"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":631,
+                 "y":426
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"woodplank"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":655,
+                 "y":452
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"woodplank"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":631,
+                 "y":461
+                }, 
+                {
+                 "height":0,
+                 "id":23,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"coche"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":556,
+                 "y":626
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -388,7 +423,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":19,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -397,7 +432,7 @@
         {
          "columns":24,
          "firstgid":1,
-         "image":"village.png",
+         "image":"..\/level3\/village.png",
          "imageheight":384,
          "imagewidth":384,
          "margin":0,
@@ -407,12 +442,246 @@
          "tileheight":16,
          "tiles":[
                 {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":4,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":6,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":7,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":8,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":9,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":10,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":11,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":26,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":27,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":28,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":29,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":30,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":31,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":32,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":33,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":34,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":35,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":54,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":55,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":56,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":57,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":58,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":59,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
                  "id":74,
                  "properties":[
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -421,7 +690,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -430,7 +699,25 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":77,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":78,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -439,7 +726,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -448,7 +735,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -457,7 +744,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -466,7 +753,16 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":83,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":false
                         }]
                 }, 
                 {
@@ -516,6 +812,15 @@
                 }, 
                 {
                  "id":105,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":106,
                  "properties":[
                         {
                          "name":"muro",
@@ -709,7 +1014,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }]
                 }, 
                 {
@@ -732,6 +1037,15 @@
                 }, 
                 {
                  "id":351,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":352,
                  "properties":[
                         {
                          "name":"muro",
