@@ -3,7 +3,7 @@
  
  > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
  ___
- #### Proyecto desarrollado por: _Grupo 12_
+ #### Proyecto desarrollado por: _WAID GAMES_
  ___
  #### IMPORTANTE:
  - En la carpeta **_videojuego_** se encuentran los archivos que componen el videojuego.
