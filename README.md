@@ -12,13 +12,9 @@
  
  ###### website: [visitar web][WEB]
  
- ###### video-demo: [visitar canal de youtube][video]
- 
  ###### Pivotal Tracker: [visualizar en la web][Pivotal Tracker]
 
  ###### Link Arquitectura: [visualizar UML][Nueva Arquitectura]
- <!-- ___ -->
- <!-- ![Imagen de JRJ con su burrito][logo] -->
  ___
  
  ##### Webs útiles:
