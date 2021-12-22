@@ -28,7 +28,7 @@
  ___
 
  ##### GDD: Game Design Document / Documento de Diseño del Videojuego
- #### **AVES - Alfred Hitchcock's inspired film-videogame**
+ ## **AVES - Alfred Hitchcock's inspired film-videogame**
 **Documento de Diseño - Grupo 12**
 
 **Contribuidores:**
