@@ -31,7 +31,7 @@ export default class Level extends Phaser.Scene {
    */
   create() {
     this.player = new Player(this, 200, 300).setDepth(3);
-    this.countdown = new Countdown(this, 180000);
+    this.countdown = new Countdown(this, 60000);
     this.ui = this.scene.add("UI", new UI(this.player, this.countdown), true)
 
     // inicia el mapa

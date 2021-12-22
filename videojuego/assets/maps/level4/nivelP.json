@@ -1,11 +1,4 @@
 { "compressionlevel":-1,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"json"
-        }
-    },
  "height":50,
  "infinite":false,
  "layers":[
@@ -46,7 +39,7 @@
          "name":"foreground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":50,
          "x":0,
          "y":0
@@ -1041,7 +1034,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1081,6 +1074,15 @@
                         }]
                 }, 
                 {
+                 "id":362,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
                  "id":363,
                  "properties":[
                         {
@@ -1091,6 +1093,42 @@
                 }, 
                 {
                  "id":364,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":365,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":366,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":369,
+                 "properties":[
+                        {
+                         "name":"muro",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":371,
                  "properties":[
                         {
                          "name":"muro",
@@ -1131,7 +1169,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1140,7 +1178,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1149,7 +1187,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1158,7 +1196,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1185,7 +1223,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
@@ -1194,7 +1232,7 @@
                         {
                          "name":"muro",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }]
                 }, 
                 {
