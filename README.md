@@ -3,8 +3,7 @@
  
  > SP: Este repositorio está dedicado al proyecto de PVLI, cuyo proyecto será una implementación de Phaser 3, en el cual se usarán archivos de tipo JavaScrypt, HTML5, CSS y JSON.
  ___
- #### Proyecto desarrollado por: _Grupo 12_
- ![imagen deljuego][portada]
+ #### Proyecto desarrollado por: _WAID GAMES_
  ___
  #### IMPORTANTE:
  - En la carpeta **_videojuego_** se encuentran los archivos que componen el videojuego.
@@ -84,9 +83,9 @@ La puntuación final está basada en el número de niveles completados y pájaro
 • Vista general
 • Relato de un nivel
 
-**II. Menús y modos de juego**
+**II. Controles de juego**
 • Configuración
-• Interfaz y controles
+• Controles
 
 **III. Jugabilidad**
 • Mecánicas
@@ -104,11 +103,11 @@ La puntuación final está basada en el número de niveles completados y pájaro
 1. **Aspectos generales**
 
 1.2 **Relato de un nivel :**
-El jugador llegará al pueblo en coche, desde donde comenzará el nivel tras un rápido preview del mapa para que el jugador tenga una idea del layout. 
+El jugador llegará al pueblo en coche, desde donde comenzará el nivel. 
 Nada más comenzar el jugador será perseguido por bandadas de cuervos y deberá recorrer las calles para encontrar al habitante que esté en peligro. 
 Una vez rescatado, el jugador tendrá que hacerse camino de vuelta al coche.
 
-<!-- 2. **Menús y modos de juego**
+2. **Controles de juego**
 
 2.1 **Configuración**
 Al iniciar el juego desde el menú principal, se mostrará al personaje protagonista en su casa, 
@@ -118,19 +117,14 @@ este entorno hace de menú de inicio.
 
 2.2.1. **Interfaz**
 
-**MENÚ PRINCIPAL:**
-- Botón de ajuste de sonido.
-- Botón de inicio de partida.
-
 **DENTRO DEL JUEGO:**
-- Pausa: Permite ver el inventario y los controles.
+- Pausa: Pausa el juego
 - Habilidades: Radio. (ON/OFF para evitar enemigos.)
 
 2.2.2. **Control**
-- Ratón: interacción en el menú.
-- Movimiento con cursores y combinaciones de dos teclas para las diagonales.
-- Abrir puertas pulsando "Z" en el teclado. 
-- Usar radio manteniendo pulsada la tecla "X".  -->
+- Movimiento con wasd
+- Esconderse con la "e"
+- Atacar con la barra espaciadora
 
 3. **Jugabilidad**
 
@@ -142,15 +136,10 @@ Se apunta con el cursor y ataca golpeando a melé con un bate en un área en for
 Interactúa con objetos pulsando la ‘E’.
 
 **Sistema de Vida**:
-	Hay dos barras de salud distintas. 
 
 ● *Vida del personaje*: 
     Cuando el jugador entra en contacto con los pájaros se quita vida por segundo, cuantos más hay, más daño hacen. 
     Se regenera cuando se termina el nivel o recogiendo la “comida” repartida por el nivel.
-
-● *Aguante de la casa*: 
-    La salud de la casa se mantiene entre niveles y disminuye cuando se termina un nivel. 
-    Si el jugador recoge materiales a lo largo del nivel, se regenera una cantidad de vida proporcional al número de materiales recogidos.
 
 **Objetivos**:
     Habrá dos objetivos a cumplir:
@@ -188,51 +177,15 @@ Se llega a la ubicación de cada nivel en coche, una vez ahí se tiene que compl
 
 ● Salpicaduras y charcos de sangre y cristales rotos.
 
-<!-- **Música utilizada**
-Menú principal: Stasis by Steve Oxen.
-Sonidos: FreeSound.org. -->
-
-<!-- 4. **Contenidos**
+ 4. **Contenidos**
 
 4.1. **Historia**
 
-Juan Ramón Jiménez es un escritor que vive en el pueblo de Moguer, Huelva, y su mejor
-amigo es su burro Platero ("...tan blando por fuera, que se diría todo algodón..."). 
-Todos los días sale en su búsqueda para que le alegre el día, 
-pero no siempre lo encuentra con facilidad, 
-en ocasiones tiene que recorrer todo el pueblo para encontrarle.
-
-4.2. **Niveles**
-
-El juego consta de un único nivel debido a la limitación del tiempo, 
-cada uno de ellos representa una zona del pueblo o sus
-alrededores, se cuenta con una clase que permitiría igualmente añadir más niveles.
-El primer nivel comienza al salir de la casa del protagonista, en una zona apartada
-del pueblo cerca de la casa del mercader de su zona.
-
-4.3. **Personajes**
-- Juan Ramón Jiménez: el personaje jugable. Es controlado por el jugador para lograr
-superar los niveles.
-- Platero: fiel compañero de Juan Ramón Jiménez. Espera quieto en un lugar del
-mapa y hay que encontrarlo para avanzar al siguiente nivel.
-- Vecinos: son los enemigos dentro del juego. Para representar su área de daño de autoestima,
-hay un área de terror representada como un triángulo en la dirección a la que miran.
-
-4.4. **Objetos y enemigos**
-- Objetos Plateriños: Herraduras
-- Objetos No Plateriños: Periódicos con noticias trágicas de la época
-- Objetos no dañinos, útiles: Baterías y LLaves
-- Radio del protagonista: recargable
-- Baterías: utilizadas para recargar la radio.
+El protagonista regresa a su pueblo invadido por pájaros y sus amigos y vecinos en peligro, armado con su fiel bate intentará rescatar a todos o morirá en el intento
 
 5. **Arquitectura y Gestión**
-- En cuanto a la arquitectura UML, hemos utilizado el software proporcionado por Diagrams.net,
-nuestra arquitectura ha cambiado con respecto a la original debido a los cambios durante el desarrollo, 
-en un principio se planeaba tener un juego mayormente extendido pero debido a la falta de comunicación
-y ciertos problemas a la hora de trabajar en grupo, no pudo ser.
-- Pivotal como sistema de gestión utilizado para asignar tareas entre los miembros del grupo.
-- Discord como sistema de comunicación para realizar las reuniones grupales y trabajar en conjunto, así
-como sistema de mensajería. También se ha usado Telegram para fijar reuniones. -->
+- Pivotal como sistema de gestión.
+- Discord como sistema de comunicación para realizar las reuniones grupales y whatsapp para planear reuniones.
 
 6. **Referencias**
 
@@ -261,7 +214,6 @@ como sistema de mensajería. También se ha usado Telegram para fijar reuniones.
 [WEB]: https://acedpol.github.io/Proyecto_PVLI---AVES/ "Web del Proyecto"
 [Sprites]: https://www.spriters-resource.com/
 [Otros Sprites]: https://www.spriters-resource.com/
-[portada]: ./assets/images/Portada.png
 <!-- [logo]: assets/images/adaptacion.png "Platero's Tale"
 [video]: https://youtu.be/q81Hx4C6JRw
 [GDD]: http://acedpol.github.io/Proyecto_PVLI_/assets/documents/GDD/Plateros_Tale_GDD_v1.1.pdf "Enlace a la web (versión html)"
