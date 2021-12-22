@@ -1,8 +1,9 @@
 import Character from './character.js';
-import FollowingCitizen from './followingCitizen.js';
+import FollowingCitizen from './followingcitizen.js';
 import Baseballbat from './baseballbat.js';
-import HiddingSpot from './hiddingSpot.js';
-import GameOver from './gameOver.js';
+import HiddingSpot from './hiddingspot.js';
+import GameOver from './gameover.js';
+import PauseMenu from './pauseMenu.js';
 export default class Player extends Character {
 
   /**
@@ -22,6 +23,7 @@ export default class Player extends Character {
     this.up = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.down = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
     this.space = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    this.pause = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
 
     this.orientation = this.down;
     this.attackcooldown = true;
@@ -104,6 +106,12 @@ export default class Player extends Character {
 
     //Ataque, para que el jugador pueda atacar tiene que esperar a que se termine su cooldown
     this.attackinput();
+    }
+
+    if (Phaser.Input.Keyboard.JustDown(this.pause)){
+      let pe = this.scene.scene;
+      this.scene.scene.pause();
+      this.scene.scene.launch("PauseMenu");
     }
   }
 
@@ -237,9 +245,9 @@ export default class Player extends Character {
   reciveDamage(damage) {
     this.hp -= damage;
     if (this.hp <= 0) {
-      this.scene.scene.remove("UI");
-      this.scene.scene.stop("Level");
+      // this.scene.scene.restart("Level");
       this.scene.scene.start("GameOver");
+      this.scene.scene.remove("UI");
       this.destroy();
     }
   }

@@ -6,7 +6,7 @@ import WoodPlank from './woodplank.js';
 import Heal from './heal.js';
 import Countdown from './countdown.js';
 import UI from './ui.js'
-import HiddingSpot from './hiddingSpot.js';
+import HiddingSpot from './hiddingspot.js';
 import Bird from './bird.js';
 /**
  * Escena principal del juego.
@@ -20,7 +20,6 @@ export default class Level extends Phaser.Scene {
     super({
       key: 'Level'
     });
-    this.lvl = 0;
   }
 
   init(datos) {
@@ -47,7 +46,6 @@ export default class Level extends Phaser.Scene {
         this.createNivel1();
         break;
     }
-    
     this.createObjects(); // creates all objects of the scene
 
 
@@ -216,6 +214,5 @@ export default class Level extends Phaser.Scene {
 
   update() {
     this.countdown.update();
-    if (this.player.hp <= 0) this.level = 0;
   }
 }

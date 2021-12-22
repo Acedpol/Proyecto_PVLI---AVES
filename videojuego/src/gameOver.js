@@ -16,6 +16,7 @@ export default class GameOver extends Phaser.Scene {
           fontSize: 28,
           align: 'right'
         })
+        this.scene.remove("UI");
         this.restart = this .input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     }
 

@@ -1,8 +1,9 @@
 import Boot from './boot.js';
 import Level from './level.js';
-import GameOver from './gameOver.js';
-import LevelCompleted from './levelCompleted.js';
-import HouseMenu from './houseMenu.js';
+import GameOver from './gameover.js';
+import LevelCompleted from './levelcompleted.js';
+import HouseMenu from './housemenu.js';
+import PauseMenu from './pauseMenu.js';
 
 /**
  * Inicio del juego en Phaser. Creamos el archivo de configuración del juego y creamos
@@ -19,7 +20,7 @@ const config_aves = {
         // autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
     },
     pixelArt: true,
-    scene: [Boot, Level, HouseMenu, GameOver, LevelCompleted],
+    scene: [Boot, Level, HouseMenu, GameOver, LevelCompleted, PauseMenu],
     physics: {
         default: 'arcade',
         arcade: {
