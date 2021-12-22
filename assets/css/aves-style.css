@@ -101,12 +101,43 @@ game_area {
     background-color:rgba(0,0,0,0.92);
 }
 
-game_area img, game_area a {
+game_area > img, game_area > a {
     width: 20%;
     height: 65%;
     
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.cuervo {
+    height: 80%;
+    width: 100%;
+}
+
+.full-screen {
+    height: 15%;
+    width: 50%;
+    padding-top: 5%;
+    border: none;
+}
+
+.full-screen > img {
+    border: none;
+    border-radius: 0%;
+}
+
+game_area > div {
+    width: 20%;
+    height: 65%;
+    
+    margin-left: 30px;
+    margin-right: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 game_area img {
